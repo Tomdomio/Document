@@ -61,21 +61,25 @@ img {
   justify-content: center;
 }
 .product-cate {
+  max-width: 96%;
   font-size: 16px;
   color: #72d5ad;
 }
 .product-name {
+  max-width: 96%;
   color: #123773;
   font-size: 25px;
   margin-bottom: 20px;
   word-break: break-word;
 }
 .product-price {
+  max-width: 96%;
   margin-bottom: 20px;
   color: #123773;
   opacity: 0.9;
 }
 .product-desc {
+  max-width: 96%;
   margin-bottom: 20px;
   font-size: 14px;
   color: #123773;
@@ -88,24 +92,35 @@ img {
   word-break: break-word;
 }
 .product img {
-  width: 70%;
-  height: 30%;
+  max-width: 96%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.main {
+  margin: 0 auto;
+  max-width: 1440px;
+  background-image: url(./bg.jpg);
+  padding: 20px 0;
+  background-size: cover;
+  height: auto;
+  background-repeat: no-repeat;
 }
 
 .container {
   max-width: 1000px;
   margin: 0 auto;
   display: flex;
-  margin-top: 60px;
   margin-bottom: 60px;
 }
 
 .form-control {
   width: 50%;
-  padding: 80px 40px 0 40px;
+  padding: 60px 40px 80px 40px;
   border: 1px solid transparent;
   border-radius: 6px;
-  box-shadow: #e6eaff 0px 5px 20px 15px;
+  box-shadow: #a5d7f0 0px 5px 20px 15px;
+  background-color: white;
 }
 .form-control-group {
   position: relative;
@@ -186,7 +201,6 @@ img {
 .shipping {
   text-align: center;
   font-size: 16px;
-  margin-bottom: 80px;
   color: #123773;
 }
 

@@ -5,21 +5,25 @@
   flex-direction: column;
   justify-content: center;
   &-cate{
+    max-width: 96%;
     font-size: 16px;
     color: #72d5ad;
   }
   &-name{
+    max-width: 96%;
     color: $color-primary;
     font-size: 25px;
     margin-bottom: 20px;
     word-break: break-word;
   }
   &-price{
+    max-width: 96%;
     margin-bottom: 20px;
     color: $color-primary;
     opacity: 0.9;
   }
   &-desc{
+    max-width: 96%;
     margin-bottom: 20px;
     font-size: 14px;
     color: $color-primary;
@@ -32,7 +36,8 @@
     word-break: break-word;
   }
   & img{
-    width: 70%;
-    height: 30%;
+    max-width: 96%;
+    object-fit: cover;
+    border-radius: 10px;
   }
 }

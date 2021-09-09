@@ -1,17 +1,26 @@
+.main{
+  margin: 0 auto;
+  max-width: 1440px;
+  background-image: url(./bg.jpg);
+  padding: 20px 0;
+  background-size: cover;
+  height: auto;
+  background-repeat: no-repeat;
+}
 .container{
   max-width: 1000px;
   margin: 0 auto;
   display: flex;
-  margin-top: 60px;
   margin-bottom: 60px;
 }
 //Form
 .form-control{
   width: 50%;
-  padding: 80px 40px 0 40px;
+  padding: 60px 40px 80px 40px;
   border: 1px solid transparent;
   border-radius: 6px;
-  box-shadow: #e6eaff 0px 5px 20px 15px;
+  box-shadow: #a5d7f0 0px 5px 20px 15px;
+  background-color: rgb(255, 255, 255);
   &-group{
     position: relative;
     margin-bottom: 50px;
@@ -92,7 +101,6 @@
 .shipping{
   text-align: center;
   font-size: 16px;
-  margin-bottom: 80px;
   color: $color-primary
 }
 input [type="file"]::-webkit-file-upload-button{
