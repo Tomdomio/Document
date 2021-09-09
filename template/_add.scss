@@ -1,0 +1,100 @@
+.container{
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+//Form
+.form-control{
+  width: 50%;
+  padding: 80px 40px 0 40px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  box-shadow: #e6eaff 0px 5px 20px 15px;
+  &-group{
+    position: relative;
+    margin-bottom: 50px;
+    &-input{
+      display: block;
+      width: 100%;
+      padding: 12px 6px;
+      border: none;
+      font-size: 16px;
+      border-bottom: 2px solid $color-bt;
+      transition: 0.25s ease;
+      &:focus{
+        border-bottom: 2px solid $input-focus;
+      }
+      &:not(:placeholder-shown) + .form-control-group-label,
+      &:focus + .form-control-group-label{
+        top: -20px;
+        color: $color-primary;
+        font-size: 16px;
+        font-weight: 600;
+      }
+    }
+    &-label{
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      user-select: none;
+      pointer-events: none;
+      color: #999;
+      transition: 0.3s ease;
+      font-size: 16px;
+    }
+  }
+  &-ob{
+    margin-bottom: 50px;
+    &-label{
+      display: block;
+      color: $color-primary;
+      font-size: 16px;
+      font-weight: 500;
+    }
+    &-select{
+      width: 100%;
+      padding: 20px 0 0 0;
+      border: none;
+      border-bottom: 2px solid $color-bt;
+      font-size: 16px;
+      color: $color-primary;
+      & option{
+        padding: 10px;
+      }
+    }
+  }
+  &-upload{
+    margin-bottom: 50px;
+    &-label{
+        display: block;
+        color: $color-primary;
+        font-size: 16px;
+        font-weight: 500;
+    }
+    &-img{
+      padding-top: 20px;
+    }
+  }
+  &-btn{
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px 0;
+    border-radius: 10px;
+    background-color: #2a71f0;
+    box-shadow: #699af5 0px 8px 24px;
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: #fff;
+  }
+}
+.shipping{
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 80px;
+  color: $color-primary
+}
+input [type="file"]::-webkit-file-upload-button{
+  padding: 5px;
+}

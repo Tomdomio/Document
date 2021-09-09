@@ -1,0 +1,38 @@
+.product{
+  width: 50%;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  justify-content: center;
+  &-cate{
+    font-size: 16px;
+    color: #72d5ad;
+  }
+  &-name{
+    color: $color-primary;
+    font-size: 25px;
+    margin-bottom: 20px;
+    word-break: break-word;
+  }
+  &-price{
+    margin-bottom: 20px;
+    color: $color-primary;
+    opacity: 0.9;
+  }
+  &-desc{
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: $color-primary;
+    opacity: 0.9;
+    display:-webkit-box;
+    -webkit-line-clamp:4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+  }
+  & img{
+    width: 70%;
+    height: 30%;
+  }
+}

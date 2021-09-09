@@ -1,0 +1,197 @@
+html {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+input,
+textarea,
+select,
+button {
+  outline: none;
+  font-family: "Poppins", sans-serif;
+}
+
+input {
+  line-height: normal;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  font-family: "Poppins", sans-serif;
+}
+
+.product {
+  width: 50%;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  justify-content: center;
+}
+.product-cate {
+  font-size: 16px;
+  color: #72d5ad;
+}
+.product-name {
+  color: #123773;
+  font-size: 25px;
+  margin-bottom: 20px;
+  word-break: break-word;
+}
+.product-price {
+  margin-bottom: 20px;
+  color: #123773;
+  opacity: 0.9;
+}
+.product-desc {
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #123773;
+  opacity: 0.9;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+}
+.product img {
+  width: 70%;
+  height: 30%;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.form-control {
+  width: 50%;
+  padding: 80px 40px 0 40px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  box-shadow: #e6eaff 0px 5px 20px 15px;
+}
+.form-control-group {
+  position: relative;
+  margin-bottom: 50px;
+}
+.form-control-group-input {
+  display: block;
+  width: 100%;
+  padding: 12px 6px;
+  border: none;
+  font-size: 16px;
+  border-bottom: 2px solid #dce3fd;
+  transition: 0.25s ease;
+}
+.form-control-group-input:focus {
+  border-bottom: 2px solid #9bb0fc;
+}
+.form-control-group-input:not(:placeholder-shown) + .form-control-group-label, .form-control-group-input:focus + .form-control-group-label {
+  top: -20px;
+  color: #123773;
+  font-size: 16px;
+  font-weight: 600;
+}
+.form-control-group-label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  user-select: none;
+  pointer-events: none;
+  color: #999;
+  transition: 0.3s ease;
+  font-size: 16px;
+}
+.form-control-ob {
+  margin-bottom: 50px;
+}
+.form-control-ob-label {
+  display: block;
+  color: #123773;
+  font-size: 16px;
+  font-weight: 500;
+}
+.form-control-ob-select {
+  width: 100%;
+  padding: 20px 0 0 0;
+  border: none;
+  border-bottom: 2px solid #dce3fd;
+  font-size: 16px;
+  color: #123773;
+}
+.form-control-ob-select option {
+  padding: 10px;
+}
+.form-control-upload {
+  margin-bottom: 50px;
+}
+.form-control-upload-label {
+  display: block;
+  color: #123773;
+  font-size: 16px;
+  font-weight: 500;
+}
+.form-control-upload-img {
+  padding-top: 20px;
+}
+.form-control-btn {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px 0;
+  border-radius: 10px;
+  background-color: #2a71f0;
+  box-shadow: #699af5 0px 8px 24px;
+  font-size: 18px;
+  margin-bottom: 40px;
+  color: #fff;
+}
+
+.shipping {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 80px;
+  color: #123773;
+}
+
+input [type=file]::-webkit-file-upload-button {
+  padding: 5px;
+}
+
+/*# sourceMappingURL=style.css.map */
