@@ -10,6 +10,8 @@ html {
 body {
   font-family: "Poppins", sans-serif;
   font-size: 16px;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 *,
@@ -105,6 +107,7 @@ img {
   background-size: cover;
   height: auto;
   background-repeat: no-repeat;
+  margin-bottom: 80px;
 }
 
 .container {
@@ -206,6 +209,128 @@ img {
 
 input [type=file]::-webkit-file-upload-button {
   padding: 5px;
+}
+
+.list {
+  max-width: 1440px;
+}
+.list-single {
+  max-width: 40%;
+  display: flex;
+  margin: 0 auto;
+  gap: 0 5px;
+  margin-bottom: 60px;
+}
+.list-single-img {
+  width: 50%;
+  height: 156px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.list-single-img img {
+  height: 100%;
+  transition: 0.3s ease;
+}
+.list-single-img img:hover {
+  transform: scale(1.2);
+}
+.list-single-item {
+  width: 50%;
+}
+.list-single-item-cate {
+  font-size: 16px;
+  color: #72d5ad;
+}
+.list-single-item-name {
+  color: #123773;
+  font-size: 20px;
+  margin-bottom: 15px;
+  word-break: break-word;
+}
+.list-single-item-price {
+  margin-bottom: 20px;
+  color: #123773;
+  opacity: 0.9;
+}
+.list-single-item-desc {
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #123773;
+  opacity: 0.9;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+}
+
+.list {
+  margin-bottom: 40px;
+}
+.list-items {
+  max-width: 95%;
+  margin: 0 auto;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 20px;
+}
+.list-items-prod {
+  position: relative;
+  height: auto;
+  cursor: pointer;
+}
+.list-items-prod-img {
+  height: 156px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.list-items-prod-img img {
+  transition: 0.3s ease;
+  height: 100%;
+  border-radius: inherit;
+}
+.list-items-prod-img img:hover {
+  transform: scale(1.2);
+}
+.list-items-prod-desc {
+  width: 100%;
+}
+.list-items-prod-desc-cate {
+  font-size: 16px;
+  color: #72d5ad;
+}
+.list-items-prod-desc-name {
+  color: #123773;
+  font-size: 20px;
+  margin-bottom: 10px;
+  word-break: break-word;
+}
+.list-items-prod-desc-price {
+  margin-bottom: 10px;
+  color: #123773;
+  opacity: 0.9;
+}
+.list-items-prod-desc-descc {
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #123773;
+  opacity: 0.9;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+}
+.list-items input {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */
