@@ -1,15 +1,17 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <addProducts/>
+  <list/>
 </template>
 
 <script>
 
-
+import addProducts from './components/addProducts.vue'
+import list from './components/list.vue'
 export default {
   name: 'App',
   components: {
-
+    addProducts,
+    list
   }
 }
 </script>
@@ -20,4 +22,5 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+@import './assets/style.css';
 </style>
