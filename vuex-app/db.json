@@ -1,0 +1,49 @@
+{
+  "products":[
+    {
+      "id": 1,
+      "nameProduct": "Ninja School Online",
+      "desc": "Product Product Product",
+      "image": "image",
+      "price": "2$"
+    },
+    {
+      "id": 2,
+      "nameProduct": "Khí Phách Anh Hùng",
+      "desc": "Product Product Product",
+      "image": "image",
+      "price": "100$"
+    },
+    {
+      "id": 3,
+      "nameProduct": "Võ Lâm Truyền Kỳ 1 Mobile",
+      "desc": "Product Product Product",
+      "image": "image",
+      "price": "5$"
+    },
+    {
+      "id": 4,
+      "nameProduct": "Võ Lâm Truyền Kỳ 1 Mobile",
+      "desc": "Product Product Product",
+      "image": "image",
+      "price": "5$"
+    },
+    {
+      "id": 5,
+      "nameProduct": "Võ Lâm Truyền Kỳ 1 Mobile",
+      "desc": "Product Product Product",
+      "image": "image",
+      "price": "5$"
+    }
+  ],
+  "productsType":[
+    {
+      "id": 1,
+      "nameType": "Game Mobile"
+    },
+    {
+      "id": 2,
+      "nameType": "Game PC"
+    }
+  ]
+}
