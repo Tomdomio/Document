@@ -1,5 +1,4 @@
 import axios from 'axios';
-import swal from 'sweetalert2'
 
 const state = {
   Products: [],
@@ -19,9 +18,6 @@ const actions = {
   async deleteProd({ commit }, id) {
     await axios.delete('http://localhost:3000/products/'+id);
     commit('removeProd', id);
-    swal({
-
-    })
   }
 };
 

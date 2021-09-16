@@ -1,5 +1,5 @@
 {
-  "products":[
+  "products": [
     {
       "id": 1,
       "nameProduct": "Ninja School Online",
@@ -43,14 +43,14 @@
       "price": "5$"
     },
     {
-      "id": 5,
+      "id": 7,
       "nameProduct": "Võ Lâm Truyền Kỳ 1 Mobile",
       "desc": "Product Product Product",
       "image": "7.jpg",
       "price": "5$"
     }
   ],
-  "productsType":[
+  "productsType": [
     {
       "id": 1,
       "nameType": "Game Mobile"

@@ -16,7 +16,7 @@
     <div class="list-items">
       <div class="list-items-prod" v-for="prod in allProducts" :key="prod.id">
         <div class="list-items-prod-img">
-          <img :src="'./assets/images/' + prod.image" alt="img-product"/>
+          <img src="../assets/images/6.jpg" alt="img-product"/>
         </div>
         <div class="list-items-prod-desc">
             <div class="list-items-prod-desc-cate">{{ prod.id }}</div>
@@ -24,14 +24,14 @@
             <div class="list-items-prod-desc-price">{{ prod.price }}₫</div>
             <div class="list-items-prod-desc-descc">{{ prod.desc }}</div>
         </div>
-        <input type="checkbox" name="name" id="name">
+        <!-- <input type="checkbox" name="name" id="name"> -->
+        <ion-icon name="close-circle-outline" v-on:click="deleteProd(prod.id)"></ion-icon>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-// import axios from 'axios';
 import {useStore} from 'vuex';
 import { mapGetters, mapActions } from 'vuex';
 export default {
@@ -43,7 +43,7 @@ export default {
     }
   },
   methods:{
-    ...mapActions(["fetchProducts"])
+    ...mapActions(["fetchProducts", "deleteProd"]),
   },
   computed:{
     ...mapGetters(["allProducts"]),
@@ -54,6 +54,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+ion-icon{
+  font-size: 25px;
+}
 </style>
