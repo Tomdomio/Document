@@ -2,62 +2,65 @@
   "products": [
     {
       "id": 1,
+      "cateProduct": "Liên Minh Huyền Thoại",
       "nameProduct": "Ninja School Online",
       "desc": "Product Product Product",
-      "image": "1.jpg",
+      "image": "https://genk.mediacdn.vn/k:thumb_w/640/2015/singed2-1448344286997/singed-bat-ngo-tro-thanh-vi-tuong-gay-bao-nhat-lien-minh-huyen-thoai-vi-ly-do-cu-chuoi.jpg",
       "price": "2$"
     },
     {
       "id": 2,
+      "cateProduct": "Liên Minh Huyền Thoại",
       "nameProduct": "Khí Phách Anh Hùng",
       "desc": "Product Product Product",
-      "image": "2.jpg",
+      "image": "https://a-static.besthdwallpaper.com/surfer-singed-wild-rift-splash-art-league-of-legends-lol-hinh-nen-2560x1600-65051_7.jpg",
       "price": "100$"
     },
     {
       "id": 3,
-      "nameProduct": "Võ Lâm Truyền Kỳ 1 Mobile",
+      "cateProduct": "Liên Minh Huyền Thoại",
+      "nameProduct": "Võ Lâm Truyền Kỳ 1",
       "desc": "Product Product Product",
-      "image": "3.jpg",
+      "image": "https://thaotruong.com/wp-content/uploads/2020/05/khac-che-tuong-singed.jpg",
       "price": "5$"
     },
     {
       "id": 4,
-      "nameProduct": "Võ Lâm Truyền Kỳ 1 Mobile",
+      "cateProduct": "Liên Minh Huyền Thoại",
+      "nameProduct": "Võ Lâm Truyền Kỳ 1",
       "desc": "Product Product Product",
-      "image": "4.jpg",
+      "image": "https://kicdo.com/images/source/skins/surfer-singed-wild-rift-skins.jpg",
       "price": "5$"
     },
     {
       "id": 5,
-      "nameProduct": "Võ Lâm Truyền Kỳ 1 Mobile",
+      "cateProduct": "Liên Minh Huyền Thoại",
+      "nameProduct": "Võ Lâm Truyền Kỳ 1",
       "desc": "Product Product Product",
-      "image": "5.jpg",
+      "image": "https://i.ytimg.com/vi/XfBcIsya5Ic/maxresdefault.jpg",
       "price": "5$"
     },
     {
       "id": 6,
-      "nameProduct": "Võ Lâm Truyền Kỳ 1 Mobile",
+      "cateProduct": "Liên Minh Huyền Thoại",
+      "nameProduct": "Võ Lâm Truyền Kỳ 1",
       "desc": "Product Product Product",
-      "image": "6.jpg",
-      "price": "5$"
-    },
-    {
-      "id": 7,
-      "nameProduct": "Võ Lâm Truyền Kỳ 1 Mobile",
-      "desc": "Product Product Product",
-      "image": "7.jpg",
+      "image": "https://lienminhhuyenthoai.vn/images/articles/htl.vn_zeus/1-champion/sivir/sss-banner.jpg",
       "price": "5$"
     }
   ],
   "productsType": [
     {
       "id": 1,
-      "nameType": "Game Mobile"
+      "nameType": "Liên Minh Huyền Thoại"
     },
     {
       "id": 2,
-      "nameType": "Game PC"
+      "nameType": "Liên Quân Mobile"
+    },
+    {
+      "id": 3,
+      "nameType": "Đột Kích 3.0"
     }
   ]
 }
