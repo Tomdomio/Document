@@ -21,13 +21,43 @@
           <h1 class="list-items-prod-desc-name">{{ prod.nameProduct }}</h1>
           <div class="list-items-prod-desc-price">{{ prod.price }}₫</div>
           <div class="list-items-prod-desc-descc">{{ prod.desc }}</div>
-
-          <ion-icon name="create-outline" v-on:click="editProd(prod.id)"></ion-icon>
+          <ion-icon name="create-outline" @click="showModal = true" v-on:click="editProd(prod.id)"></ion-icon>
           <ion-icon name="close-circle-outline" v-on:click="deleteProd(prod.id)"></ion-icon>
         </div>
       </div>
     </div>
   </div>
+  <div class="editProp" v-if="showModal">
+    <form>
+      <div class="control-group">
+        <label  class="label">Product name:</label>
+        <input type="text" placeholder="" class="input" autocomplete="off" />
+      </div>
+        <div class="control-group">
+        <label class="label">Product price:</label>
+        <input type="text"  placeholder="" class="input" autocomplete="off" />
+      </div>
+      <div class="control-group">
+        <label class="label">Description:</label>
+        <textarea placeholder="" class="input" autocomplete="off"></textarea>
+      </div>
+      <div class="control-group">
+        <label class="label">Choose category:</label>
+        <select class="select">
+          <option value="1">Liên Minh Huyền Thoại</option>
+          <option value="2">Liên Quân Mobile</option>
+          <option value="3">Đột Kích 3.0</option>
+        </select>
+      </div>
+      <div class="control-group img">
+        <label class="label">URL Image:</label>
+        <input type="text" placeholder="" class="input" autocomplete="off" />
+      </div>
+      <button type="submit" class="form-btn">Update</button>
+      <button @click="showModal = false" class="form-btn">Close</button>
+    </form>
+  </div>
+  <div class="editProp-overlay" v-if="showModal"></div>
 </template>
 
 <script>
@@ -35,8 +65,13 @@ import { mapGetters, mapActions } from 'vuex';
 
 export default {
   name: "list",
+  data(){
+    return{
+      showModal: false,
+    }
+  },
   methods:{
-    ...mapActions(["fetchProducts","deleteProd"]),
+    ...mapActions(["fetchProducts", "deleteProd", "editprod"]),
   },
   computed:{
     ...mapGetters(["allProducts"]),
@@ -65,7 +100,7 @@ ion-icon{
 .list-items-prod{
   border: 1px solid red;
   border-radius: 10px;
-  box-shadow: rgba(247, 37, 128, 0.809) 0px 5px 12px;
+  box-shadow: rgba(243, 102, 163, 0.809) 0px 5px 12px;
 }
 .list-items-prod-img{
   margin-bottom: 20px;
@@ -76,5 +111,62 @@ ion-icon{
 }
 .list-items-prod-desc{
   padding-left: 20px;
+}
+.editProp{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  background-color: #fff;
+  z-index: 999;
+  border-radius: 10px;
+  padding: 40px;
+}
+.editProp-overlay{
+  background-color: rgba(114, 113, 113, 0.4);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0; bottom: 0; left: 0; right: 0;
+}
+.control-group{
+  margin-bottom: 15px;
+}
+.label{
+  display: block;
+  color: #6a99f3;
+  font-size: 17px;
+  margin-bottom: 5px;
+}
+.input{
+  width: 100%;
+  padding: 8px 0;
+  border: none;
+  border-bottom: 1px solid #6a99f3;
+}
+.select{
+  padding: 6px 0;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #6a99f3;
+}
+.img{
+  margin-bottom: 25px;
+}
+.form-btn{
+  display: inline-block;
+  padding: 15px 0;
+  width: 40%;
+  background-color: #397bf5;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  color: white;
+}
+form .form-btn:last-child{
+  float: right;
+  background-color: rgb(199, 199, 199);
 }
 </style>

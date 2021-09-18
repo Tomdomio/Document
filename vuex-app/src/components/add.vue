@@ -1,7 +1,13 @@
 <template>
   <div class="main">
     <div class="container">
-      <single/>
+      <div class="product">
+        <div class="product-cate">{{ prod.cateProduct }}</div>
+        <h1 class="product-name">{{ prod.nameProduct }}</h1>
+        <div class="product-price">{{ prod.price }}</div>
+        <div class="product-desc">{{ prod.desc }}</div>
+        <img :src="prod.image" class="img-show" alt="">
+      </div>
       <div class="form-control">
         <form @submit="onSubmit">
           <div class="form-control-group">
@@ -33,8 +39,7 @@
             <label class="form-control-group-label">URL Image</label>
             <!-- <span class="error" v-if="v$.image">{{ v$.prod.image.$errors[0].$messenge }}</span> -->
           </div>
-          <img src="https://adchiase.com/upload/chinhanh/2020/tochien/singed/cach-choi-singed-toc-chien33.jpg" class="img-show" alt="">
-          <button type="submit" class=" btn form-control-btn">SUBMIT</button>
+          <button type="submit" class=" btn form-control-btn">CREATE</button>
         </form>
         <div class="shipping">100% - Giao hàng miễn phí</div>
       </div>
@@ -43,16 +48,12 @@
 </template>
 
 <script>
-import single from './single.vue';
 import { mapActions } from 'vuex';
 import useVuelidate from '@vuelidate/core'
 import { required, minLength } from '@vuelidate/validators'
 
 export default {
   name: "addProd",
-  components:{
-    single,
-  },
   data() {
     return {
       v$: useVuelidate(),
@@ -98,7 +99,8 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .img-show{
-  margin-bottom: 20px;
-  max-width: 50%;
+  max-width: 350px;
+  height: auto;
+  overflow: hidden;
 }
 </style>

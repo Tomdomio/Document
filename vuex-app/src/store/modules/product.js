@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+const BaseURL = 'http://localhost:3000/products/';
+
 const state = {
   Products: [],
 };
@@ -12,19 +14,19 @@ const getters = {
 
 const actions = {
   async fetchProducts({ commit }) {
-    const response = await axios.get('http://localhost:3000/products');
+    const response = await axios.get(BaseURL);
     commit('setProducts', response.data);
   },
   async deleteProd({ commit }, id) {
-    await axios.delete('http://localhost:3000/products/' + id);
+    await axios.delete(BaseURL+ id);
     const res = confirm('Bạn có chắc muốn xóa');
     if (res) {
       commit('removeProd', id)
     }
   },
   async addProd({ commit }, prod) {
-    const response = await axios.post('http://localhost:3000/products', prod);
-    commit('addProd', response.data).reload();
+    const response = await axios.post(BaseURL, prod);
+    commit('addProd', response.data);
   }
 };
 

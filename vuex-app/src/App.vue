@@ -12,7 +12,7 @@ export default {
   name: 'App',
   components: {
     add,
-    list
+    list,
   }
 }
 </script>
