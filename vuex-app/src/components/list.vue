@@ -1,49 +1,51 @@
 <template>
   <div class="list">
-    <div class="list-single">
+    <div class="list-single" v-if="prodView">
       <div class="list-single-img">
-        <img src="https://adchiase.com/upload/chinhanh/2020/tochien/singed/cach-choi-singed-toc-chien33.jpg" class="js-prod" alt="img-product">
+        <img :src="IDProd.image" class="js-prod" alt="img-product" />
       </div>
       <div class="list-single-item">
-          <div class="list-single-item-cate js-cate">Category: </div>
-          <h1 class="list-single-item-name js-name">Product Name</h1>
-          <div class="list-single-item-price js-price">Product Price: 0₫</div>
-          <div class="list-single-item-desc js-desc">Description: </div>
+        <div class="list-single-item-cate js-cate">{{ IDProd.cateProduct }}</div>
+        <h1 class="list-single-item-name js-name">{{ IDProd.nameProduct }}</h1>
+        <div class="list-single-item-price js-price">{{ IDProd.price }} ₫</div>
+        <div class="list-single-item-desc js-desc">{{ IDProd.desc }}</div>
       </div>
     </div>
     <div class="list-items">
-      <div class="list-items-prod" v-for="(prod) in allProducts" :key="prod.id">
+      <div class="list-items-prod" v-for="prod in allProducts" :key="prod.id" @click="prodView = true" v-on:click="getProdID(prod.id)">
         <div class="list-items-prod-img">
-          <img :src="prod.image" alt="img-product"/>
+          <img :src="prod.image" alt="img-product" />
         </div>
         <div class="list-items-prod-desc">
           <div class="list-items-prod-desc-cate">{{ prod.cateProduct }}</div>
           <h1 class="list-items-prod-desc-name">{{ prod.nameProduct }}</h1>
           <div class="list-items-prod-desc-price">{{ prod.price }}₫</div>
           <div class="list-items-prod-desc-descc">{{ prod.desc }}</div>
-          <ion-icon name="create-outline" @click="showModal = true" v-on:click="editProd(prod.id)"></ion-icon>
+        </div>
+        <div class="action">
+          <ion-icon name="create-outline" @click="showModal = true" v-on:click="getProdID(prod.id)"></ion-icon>
           <ion-icon name="close-circle-outline" v-on:click="deleteProd(prod.id)"></ion-icon>
         </div>
       </div>
     </div>
   </div>
   <div class="editProp" v-if="showModal">
-    <form>
+    <form @submit="updateSubmit">
       <div class="control-group">
-        <label  class="label">Product name:</label>
-        <input type="text" placeholder="" class="input" autocomplete="off" />
+        <label class="label">Product name:</label>
+        <input type="text" class="input" v-model="IDProd.nameProduct" autocomplete="off" />
       </div>
-        <div class="control-group">
+      <div class="control-group">
         <label class="label">Product price:</label>
-        <input type="text"  placeholder="" class="input" autocomplete="off" />
+        <input type="text" class="input" v-model="IDProd.price" autocomplete="off" />
       </div>
       <div class="control-group">
         <label class="label">Description:</label>
-        <textarea placeholder="" class="input" autocomplete="off"></textarea>
+        <textarea v-model="IDProd.desc" class="input" autocomplete="off"></textarea>
       </div>
       <div class="control-group">
         <label class="label">Choose category:</label>
-        <select class="select">
+        <select class="select" v-model="IDProd.cateProduct">
           <option value="1">Liên Minh Huyền Thoại</option>
           <option value="2">Liên Quân Mobile</option>
           <option value="3">Đột Kích 3.0</option>
@@ -51,7 +53,7 @@
       </div>
       <div class="control-group img">
         <label class="label">URL Image:</label>
-        <input type="text" placeholder="" class="input" autocomplete="off" />
+        <input type="text" v-model="IDProd.image" class="input" autocomplete="off" />
       </div>
       <button type="submit" class="form-btn">Update</button>
       <button @click="showModal = false" class="form-btn">Close</button>
@@ -61,58 +63,98 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   name: "list",
-  data(){
-    return{
+  data() {
+    return {
       showModal: false,
-    }
+      prodView: false,
+    };
   },
-  methods:{
-    ...mapActions(["fetchProducts", "deleteProd", "editprod"]),
+  methods: {
+    ...mapActions(["fetchProducts", "deleteProd", "getProdID", "updateProd"]),
+    updateSubmit() {
+      const updatedProd = {
+        id: this.IDProd.id,
+        nameProduct: this.IDProd.nameProduct,
+        price: this.IDProd.price,
+        desc: this.IDProd.desc,
+        cateProduct: this.IDProd.cateProduct,
+        image: this.IDProd.image,
+      };
+      this.updateProd(updatedProd);
+      alert("sửa Thành công");
+    },
   },
-  computed:{
-    ...mapGetters(["allProducts"]),
+  computed: {
+    ...mapGetters(["allProducts", "IDProd", "prodView"]),
   },
   created() {
     this.fetchProducts();
-  }
-}
+  },
+};
 </script>
-
 <style scoped>
-ion-icon{
+ion-icon {
   font-size: 25px;
   color: red;
+  margin-top: 10px;
   display: inline-block;
 }
-.list-items-prod ion-icon:first-of-type{
+.list-items-prod ion-icon:first-of-type {
   margin-right: 20px;
 }
-.list-single-item{
+.list-single-item {
   cursor: default;
 }
-.list-single-item-cate{
+.list-items-prod-img img {
+  object-fit: cover;
+}
+.list-single-img img {
+  width: 100%;
+}
+.list-single-item-cate {
   margin-bottom: 10px;
 }
-.list-items-prod{
+.list-items-prod {
   border: 1px solid red;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
   box-shadow: rgba(243, 102, 163, 0.809) 0px 5px 12px;
 }
-.list-items-prod-img{
+.list-items-prod-img {
   margin-bottom: 20px;
   border-radius: 10px 10px 0 0;
 }
-.list-items-prod-desc-cate{
+
+.list-items-prod-desc-cate {
   margin-bottom: 10px;
 }
-.list-items-prod-desc{
-  padding-left: 20px;
+.list-items-prod-desc-name {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
 }
-.editProp{
+.list-items-prod-desc {
+  padding: 0 15px;
+  flex: 1;
+  padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+}
+.list-single-item-desc {
+  margin-bottom: unset;
+}
+.list-items-prod-desc-price {
+  margin-top: auto;
+}
+.editProp {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -123,39 +165,44 @@ ion-icon{
   z-index: 999;
   border-radius: 10px;
   padding: 40px;
+  transition: opacity 0.3s ease;
 }
-.editProp-overlay{
+.editProp-overlay {
   background-color: rgba(114, 113, 113, 0.4);
   position: fixed;
   width: 100%;
   height: 100%;
-  top: 0; bottom: 0; left: 0; right: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: all 0.3s linear;
 }
-.control-group{
+.control-group {
   margin-bottom: 15px;
 }
-.label{
+.label {
   display: block;
   color: #6a99f3;
   font-size: 17px;
   margin-bottom: 5px;
 }
-.input{
+.input {
   width: 100%;
   padding: 8px 0;
   border: none;
   border-bottom: 1px solid #6a99f3;
 }
-.select{
+.select {
   padding: 6px 0;
   width: 100%;
   border: none;
   border-bottom: 1px solid #6a99f3;
 }
-.img{
+.img {
   margin-bottom: 25px;
 }
-.form-btn{
+.form-btn {
   display: inline-block;
   padding: 15px 0;
   width: 40%;
@@ -165,8 +212,15 @@ ion-icon{
   border-radius: 10px;
   color: white;
 }
-form .form-btn:last-child{
+form button:nth-of-type(2) {
   float: right;
-  background-color: rgb(199, 199, 199);
+}
+
+.action {
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  border-top: 1px solid red;
 }
 </style>

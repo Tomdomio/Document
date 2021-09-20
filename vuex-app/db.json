@@ -6,15 +6,15 @@
       "nameProduct": "Ninja School Online",
       "desc": "Product Product Product",
       "image": "https://genk.mediacdn.vn/k:thumb_w/640/2015/singed2-1448344286997/singed-bat-ngo-tro-thanh-vi-tuong-gay-bao-nhat-lien-minh-huyen-thoai-vi-ly-do-cu-chuoi.jpg",
-      "price": "2$"
+      "price": "2"
     },
     {
       "id": 2,
       "cateProduct": "Liên Minh Huyền Thoại",
-      "nameProduct": "Khí Phách Anh Hùng",
+      "nameProduct": "Khí Phách Anh Hùng Khí Phách Anh Hùng",
       "desc": "Product Product Product",
       "image": "https://a-static.besthdwallpaper.com/surfer-singed-wild-rift-splash-art-league-of-legends-lol-hinh-nen-2560x1600-65051_7.jpg",
-      "price": "100$"
+      "price": "100"
     },
     {
       "id": 3,
@@ -22,7 +22,7 @@
       "nameProduct": "Võ Lâm Truyền Kỳ 1",
       "desc": "Product Product Product",
       "image": "https://thaotruong.com/wp-content/uploads/2020/05/khac-che-tuong-singed.jpg",
-      "price": "5$"
+      "price": "5"
     },
     {
       "id": 4,
@@ -30,7 +30,7 @@
       "nameProduct": "Võ Lâm Truyền Kỳ 1",
       "desc": "Product Product Product",
       "image": "https://kicdo.com/images/source/skins/surfer-singed-wild-rift-skins.jpg",
-      "price": "5$"
+      "price": "5"
     },
     {
       "id": 5,
@@ -38,7 +38,7 @@
       "nameProduct": "Võ Lâm Truyền Kỳ 1",
       "desc": "Product Product Product",
       "image": "https://i.ytimg.com/vi/XfBcIsya5Ic/maxresdefault.jpg",
-      "price": "5$"
+      "price": "5"
     },
     {
       "id": 6,
@@ -46,21 +46,45 @@
       "nameProduct": "Võ Lâm Truyền Kỳ 1",
       "desc": "Product Product Product",
       "image": "https://lienminhhuyenthoai.vn/images/articles/htl.vn_zeus/1-champion/sivir/sss-banner.jpg",
-      "price": "5$"
+      "price": "5"
+    },
+    {
+      "id": 7,
+      "cateProduct": "Liên Minh Huyền Thoại",
+      "nameProduct": "Võ Lâm Truyền Kỳ 1",
+      "desc": "Product Product Product",
+      "image": "https://lienminhhuyenthoai.vn/images/articles/htl.vn_zeus/1-champion/sivir/sss-banner.jpg",
+      "price": "5"
+    },
+    {
+      "id": 8,
+      "nameProduct": "Võ Lâm Truyền Kỳ 1",
+      "price": "99999",
+      "desc": "Product Product Product",
+      "cateProduct": "1",
+      "image": "https://lienminhhuyenthoai.vn/images/articles/htl.vn_zeus/1-champion/sivir/sss-banner.jpg"
+    },
+    {
+      "id": 9,
+      "nameProduct": "Tôm Tôm Tôm ",
+      "price": "1111111111",
+      "desc": "Tôm Tôm Tôm tôm tttttttt",
+      "cateProduct": "Liên Quân Mobile",
+      "image": "https://jbovietnam.net/wp-content/uploads/2021/02/Screenshot_5-5.png"
     }
   ],
-  "productsType": [
+  "category": [
     {
       "id": 1,
-      "nameType": "Liên Minh Huyền Thoại"
+      "nameCate": "Liên Minh Huyền Thoại"
     },
     {
       "id": 2,
-      "nameType": "Liên Quân Mobile"
+      "nameCate": "Liên Quân Mobile"
     },
     {
       "id": 3,
-      "nameType": "Đột Kích 3.0"
+      "nameCate": "Đột Kích 3.0"
     }
   ]
 }
