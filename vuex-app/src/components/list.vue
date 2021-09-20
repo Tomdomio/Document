@@ -108,6 +108,12 @@ ion-icon {
 }
 .list-single-item {
   cursor: default;
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+.list-single-item-price {
+  margin-top: auto;
 }
 .list-items-prod-img img {
   object-fit: cover;
