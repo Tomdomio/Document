@@ -46,9 +46,7 @@
       <div class="control-group">
         <label class="label">Choose category:</label>
         <select class="select" v-model="IDProd.cateProduct">
-          <option value="1">Liên Minh Huyền Thoại</option>
-          <option value="2">Liên Quân Mobile</option>
-          <option value="3">Đột Kích 3.0</option>
+          <option v-for="cate in allCates" :key="cate.id">{{ cate.nameCate }}</option>
         </select>
       </div>
       <div class="control-group img">
@@ -74,7 +72,7 @@ export default {
     };
   },
   methods: {
-    ...mapActions(["fetchProducts", "deleteProd", "getProdID", "updateProd"]),
+    ...mapActions(["fetchProducts", "fetchCates", "deleteProd", "getProdID", "updateProd"]),
     updateSubmit() {
       const updatedProd = {
         id: this.IDProd.id,
@@ -89,10 +87,11 @@ export default {
     },
   },
   computed: {
-    ...mapGetters(["allProducts", "IDProd", "prodView"]),
+    ...mapGetters(["allProducts", "IDProd", "prodView", "allCates"]),
   },
   created() {
     this.fetchProducts();
+    this.fetchCates();
   },
 };
 </script>
