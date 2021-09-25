@@ -73,7 +73,8 @@ export default {
   },
   methods: {
     ...mapActions(["fetchProducts", "fetchCates", "deleteProd", "getProdID", "updateProd"]),
-    updateSubmit() {
+    updateSubmit(e) {
+      e.preventDefault();
       const updatedProd = {
         id: this.IDProd.id,
         nameProduct: this.IDProd.nameProduct,
@@ -84,6 +85,7 @@ export default {
       };
       this.updateProd(updatedProd);
       alert("sửa Thành công");
+      this.showModal = false;
     },
   },
   computed: {
