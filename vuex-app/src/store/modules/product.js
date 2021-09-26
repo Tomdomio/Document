@@ -53,7 +53,7 @@ const actions = {
 const mutations = {
   setProducts: (state, Products) => (state.Products = Products),
   removeProd: (state, id) => (state.Products = state.Products.filter((product) => product.id !== id)),
-  addProd: (state, newProd) => state.Products.unshift(newProd),
+  addProd: (state, newProd) => state.Products.push(newProd),
   ProductID: (state, ProdID) => (state.ProdID = ProdID),
   updateProd: (state, updateProd) => {
     const index = state.Products.findIndex((product) => product.id === updateProd.id);
