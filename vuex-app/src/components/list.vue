@@ -84,7 +84,7 @@ export default {
         image: this.IDProd.image,
       };
       this.updateProd(updatedProd);
-      alert("sửa Thành công");
+      alert("Sửa Thành công");
       this.showModal = false;
     },
   },

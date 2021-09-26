@@ -13,29 +13,39 @@
           <div class="form-control-group">
             <input type="text" v-model="prod.nameProduct" placeholder=" " class="form-control-group-input" autocomplete="off" />
             <label class="form-control-group-label">Product name</label>
-            <!-- <span class="error" v-if="v$.nameProduct">{{ v$.prod.nameProduct.$errors[0].$messenge }}</span> -->
+            <p v-if="check">
+              <span class="error" v-if="v$.prod.nameProduct">{{ v$.prod.nameProduct.$errors[0].$message }}</span>
+            </p>
           </div>
           <div class="form-control-group">
             <input type="text" v-model="prod.price" placeholder=" " class="form-control-group-input" autocomplete="off" />
             <label class="form-control-group-label">Product price</label>
-            <!-- <span class="error" v-if="v$.price">{{ v$.prod.price.$errors[0].$messenge }}</span> -->
+            <p v-if="check">
+              <span class="error" v-if="v$.prod.price">{{ v$.prod.price.$errors[0].$message }}</span>
+            </p>
           </div>
           <div class="form-control-group">
             <textarea placeholder=" " v-model="prod.desc" class="form-control-group-input" autocomplete="off"></textarea>
             <label class="form-control-group-label">Description</label>
-            <!-- <span class="error" v-if="v$.desc">{{ v$.prod.desc.$errors[0].$messenge }}</span> -->
+            <p v-if="check">
+              <span class="error" v-if="v$.prod.desc">{{ v$.prod.desc.$errors[0].$message }}</span>
+            </p>
           </div>
           <div class="form-control-ob">
             <label class="form-control-ob-label">Choose category</label>
             <select class="form-control-ob-select" v-model="prod.cateProduct">
               <option v-for="cate in allCates" :key="cate.id">{{ cate.nameCate }}</option>
             </select>
-            <!-- <span class="error" v-if="v$.cateProduct">{{ v$.prod.cateProduct.$errors[0].$messenge }}</span> -->
+            <p v-if="check">
+              <span class="error" v-if="v$.prod.cateProduct">{{ v$.prod.cateProduct.$errors[0].$message }}</span>
+            </p>
           </div>
           <div class="form-control-group">
             <input type="text" v-model="prod.image" placeholder=" " class="form-control-group-input" autocomplete="off" />
             <label class="form-control-group-label">URL Image</label>
-            <!-- <span class="error" v-if="v$.image">{{ v$.prod.image.$errors[0].$messenge }}</span> -->
+            <p v-if="check">
+              <span class="error" v-if="v$.prod.image">{{ v$.prod.image.$errors[0].$message }}</span>
+            </p>
           </div>
           <button type="submit" class=" btn form-control-btn">CREATE</button>
         </form>
@@ -54,6 +64,7 @@ export default {
   name: "addProd",
   data() {
     return {
+      check: false,
       v$: useVuelidate(),
       prod: {
         nameProduct: "",
@@ -78,14 +89,14 @@ export default {
   methods: {
     ...mapActions(["addProd", "fetchCates"]),
     onSubmit(event) {
+      event.preventDefault();
+      this.check = true;
       this.v$.$validate();
       if (!this.v$.$error) {
-        event.preventDefault();
         this.addProd(this.prod);
+        this.check = false;
         this.prod = "";
         alert("Thêm Thành công");
-      } else {
-        alert("Lỗi!!! Dữ liệu không hợp lệ hoặc bị bỏ trống");
       }
     },
   },
@@ -102,5 +113,9 @@ export default {
   max-width: 350px;
   height: auto;
   overflow: hidden;
+}
+.error {
+  color: red;
+  font-size: 12px;
 }
 </style>
