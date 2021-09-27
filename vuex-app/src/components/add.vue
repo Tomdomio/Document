@@ -2,11 +2,11 @@
   <div class="main">
     <div class="container">
       <div class="product">
-        <div class="product-cate">{{ prod.cateProduct }}</div>
-        <h1 class="product-name">{{ prod.nameProduct }}</h1>
-        <div class="product-price">{{ prod.price }}</div>
-        <div class="product-desc">{{ prod.desc }}</div>
-        <img :src="prod.image" class="img-show" alt="" />
+        <div class="product-cate"></div>
+        <h1 class="product-name"></h1>
+        <div class="product-price"></div>
+        <div class="product-desc"></div>
+        <img src="" class="img-show" alt="" />
       </div>
       <div class="form-control">
         <form @submit="onSubmit">
@@ -41,11 +41,8 @@
             </p>
           </div>
           <div class="form-control-group">
-            <input type="text" v-model="prod.image" placeholder=" " class="form-control-group-input" autocomplete="off" />
-            <label class="form-control-group-label">URL Image</label>
-            <p v-if="check">
-              <span class="error" v-if="v$.prod.image">{{ v$.prod.image.$errors[0].$message }}</span>
-            </p>
+            <input type="file" @change="onSelected" class="form-control-group-input" autocomplete="off" />
+            <img :src="prod.image" style="max-width: 350px; max-height: 200px; margin-top: 20px" />
           </div>
           <button type="submit" class=" btn form-control-btn">CREATE</button>
         </form>
@@ -59,11 +56,14 @@
 import { mapActions, mapGetters } from "vuex";
 import useVuelidate from "@vuelidate/core";
 import { required, minLength } from "@vuelidate/validators";
+import { db } from "../filebase";
+import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 
 export default {
   name: "addProd",
   data() {
     return {
+      progress: [],
       check: false,
       v$: useVuelidate(),
       prod: {
@@ -82,17 +82,54 @@ export default {
         price: { required },
         desc: { required, minLength: minLength(6) },
         cateProduct: { required },
-        image: { required },
       },
+    };
+  },
+  firestore() {
+    return {
+      images: db.collection("images"),
     };
   },
   methods: {
     ...mapActions(["addProd", "fetchCates"]),
+    onSelected(e) {
+      let file = e.target.files[0];
+      const storage = getStorage();
+      const metadata = {
+        contentType: "image/jpeg",
+      };
+      const storageRef = ref(storage, "images/" + file.name);
+      const uploadTask = uploadBytesResumable(storageRef, file, metadata);
+      uploadTask.on(
+        "state_changed",
+        (snapshot) => {
+          const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          console.log("Upload is " + progress + "% done");
+        },
+        (error) => {
+          switch (error.code) {
+            case "storage/unauthorized":
+              break;
+            case "storage/canceled":
+              break;
+            case "storage/unknown":
+              break;
+          }
+        },
+        () => {
+          getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+            this.prod.image = downloadURL;
+            console.log("imageURL", downloadURL);
+          });
+        }
+      );
+    },
     onSubmit(event) {
       event.preventDefault();
       this.check = true;
       this.v$.$validate();
       if (!this.v$.$error) {
+        this.check = false;
         this.addProd(this.prod);
         this.check = false;
         this.prod = "";
