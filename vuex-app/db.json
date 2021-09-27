@@ -71,6 +71,14 @@
       "desc": "Tôm Tôm",
       "cateProduct": "Đột Kích 3.0",
       "image": "https://jbovietnam.net/wp-content/uploads/2021/02/Screenshot_5-5.png"
+    },
+    {
+      "nameProduct": "SinGGumNoProxy",
+      "price": "200000",
+      "desc": "SinGGumNoProxy",
+      "cateProduct": "Liên Minh Huyền Thoại",
+      "image": "https://firebasestorage.googleapis.com/v0/b/library-8f723.appspot.com/o/images%2FSinggum.jpg?alt=media&token=4f7c0f32-5dca-4d0d-947d-1d959f4d6b4b",
+      "id": 10
     }
   ],
   "category": [

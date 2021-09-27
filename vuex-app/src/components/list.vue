@@ -2,7 +2,7 @@
   <div class="list">
     <div class="list-single" v-if="prodView">
       <div class="list-single-img">
-        <img :src="IDProd.image" class="js-prod" alt="img-product" />
+        <img :src="IDProd.image" alt="img-product" />
       </div>
       <div class="list-single-item">
         <div class="list-single-item-cate js-cate">{{ IDProd.cateProduct }}</div>
@@ -50,8 +50,9 @@
         </select>
       </div>
       <div class="control-group img">
-        <label class="label">URL Image:</label>
-        <input type="text" v-model="IDProd.image" class="input" autocomplete="off" />
+        <label class="label">Upload Image:</label>
+        <input type="file" @change="updateImage" class="input" autocomplete="off" />
+        <img :src="IDProd.image" class="img-s" alt="" />
       </div>
       <button type="submit" class="form-btn">Update</button>
       <button @click="showModal = false" class="form-btn">Close</button>
@@ -161,13 +162,17 @@ ion-icon {
 .list-items-prod-desc-price {
   margin-top: auto;
 }
+.img-s {
+  max-width: 250px;
+  margin-top: 20px;
+}
 .editProp {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 500px;
-  height: 500px;
+  height: 650px;
   background-color: #fff;
   z-index: 999;
   border-radius: 10px;
@@ -192,7 +197,6 @@ ion-icon {
   display: block;
   color: #6a99f3;
   font-size: 17px;
-  margin-bottom: 5px;
 }
 .input {
   width: 100%;
