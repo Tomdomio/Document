@@ -1,0 +1,21 @@
+{
+  "name": "watch",
+  "id": "MdSLkKuPal7jJhgw",
+  "task_id": 676,
+  "platform": "shopify",
+  "complete": false,
+  "dev": "minhlh",
+  "category": "about us",
+  "author": "LayoutHub Team",
+  "website": "https://www.LayoutHub.com",
+  "version": "1.0",
+  "sections": ["welcome", "story"],
+  "theme": {
+    "font_family": "Lato",
+    "title_font_family": "Lora",
+    "color": "#bacdd9",
+    "font_size": "16"
+  },
+  "label": "watch",
+  "action": "item"
+}
