@@ -106,14 +106,7 @@ export default {
           console.log("Upload is " + progress + "% done");
         },
         (error) => {
-          switch (error.code) {
-            case "storage/unauthorized":
-              break;
-            case "storage/canceled":
-              break;
-            case "storage/unknown":
-              break;
-          }
+          console.log(error.code);
         },
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
