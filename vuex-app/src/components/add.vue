@@ -63,7 +63,6 @@ export default {
   name: "addProd",
   data() {
     return {
-      progress: [],
       check: false,
       v$: useVuelidate(),
       prod: {

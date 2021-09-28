@@ -63,6 +63,8 @@
 
 <script>
 import { mapGetters, mapActions } from "vuex";
+import { db } from "../filebase";
+import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 
 export default {
   name: "list",
@@ -72,8 +74,44 @@ export default {
       prodView: false,
     };
   },
+  firestore() {
+    return {
+      images: db.collection("images"),
+    };
+  },
   methods: {
     ...mapActions(["fetchProducts", "fetchCates", "deleteProd", "getProdID", "updateProd"]),
+    updateImage(e) {
+      let file = e.target.files[0];
+      const storage = getStorage();
+      const metadata = {
+        contentType: "image/jpeg",
+      };
+      const storageRef = ref(storage, "images/" + file.name);
+      const uploadTask = uploadBytesResumable(storageRef, file, metadata);
+      uploadTask.on(
+        "state_changed",
+        (snapshot) => {
+          const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          console.log("Upload is " + progress + "% done");
+        },
+        (error) => {
+          switch (error.code) {
+            case "storage/unauthorized":
+              break;
+            case "storage/canceled":
+              break;
+            case "storage/unknown":
+              break;
+          }
+        },
+        () => {
+          getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+            this.IDProd.image = downloadURL;
+          });
+        }
+      );
+    },
     updateSubmit(e) {
       e.preventDefault();
       const updatedProd = {
