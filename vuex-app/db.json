@@ -19,7 +19,7 @@
     {
       "id": 3,
       "nameProduct": "Đột Kích 3.0",
-      "price": "10000000",
+      "price": "1000000",
       "desc": "Product Product Product",
       "cateProduct": "Đột Kích 3.0",
       "image": "https://thaotruong.com/wp-content/uploads/2020/05/khac-che-tuong-singed.jpg"
@@ -59,7 +59,7 @@
     {
       "id": 8,
       "nameProduct": "Võ Lâm Truyền Kỳ 1",
-      "price": "99999",
+      "price": "9999",
       "desc": "Product Product Product",
       "cateProduct": "Liên Quân Mobile",
       "image": "https://firebasestorage.googleapis.com/v0/b/library-8f723.appspot.com/o/images%2F3.jpg?alt=media&token=8ae8092a-3b9b-4753-9709-1a5ccc745708"
