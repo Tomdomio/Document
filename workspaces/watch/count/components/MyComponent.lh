@@ -9,6 +9,8 @@ $this.find('marquee').click(function(){
     jQuery(this).slideUp();
 });
 @endjavascript
+
+
 <style>
      marquee{
          color:red;

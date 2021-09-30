@@ -9,10 +9,10 @@
   "author": "LayoutHub Team",
   "website": "https://www.LayoutHub.com",
   "version": "1.0",
-  "sections": ["welcome", "story"],
+  "sections": ["story", "single", "count"],
   "theme": {
-    "font_family": "Lato",
-    "title_font_family": "Lora",
+    "font_family": "Manrope",
+    "title_font_family": "Manrope",
     "color": "#bacdd9",
     "font_size": "16"
   },

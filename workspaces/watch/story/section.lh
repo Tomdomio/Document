@@ -15,25 +15,29 @@
 
 <template>
 	<div class="lh-wrapper">
-
+        <div class="contain">
+            <div class="heading">
+                <h1 v-html="settings.title"></h1>
+                <span>Home/</span><span v-html="settings.smallTitle"></span>
+            </div>
+	    </div>
 	</div>
 </template>
 <script>
 export default {
-    computed:{
-        upperCase(){
-            return this.settings.title.toUpperCase();
-        }
-    }
+
 }
 </script>
 <style>
-h3{
-    text-align:center;
-    margin:5px;
+.contain{
+    max-width: 1170px;
+    margin: 0 auto;
 }
-img{
-    display:block;
-    margin:auto;
+.heading{
+    margin-top: 50px;
+}
+.heading h1{
+    font-size: 64px;
+    font-weight: 600;
 }
 </style>

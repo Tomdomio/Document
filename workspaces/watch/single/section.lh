@@ -1,0 +1,95 @@
+@schema
+{
+    "name": "Single",
+    "author": "LayoutHub Team",
+    "website": "https:\/\/www.LayoutHub.com",
+    "version": "1.0",
+    "category": "Testimonials",
+    "platform": "shopify",
+    "vendors": [
+        "css_line_icon",
+        "css_layouthub_base",
+        "css_swiper_slider",
+        "js_swiper_slider",
+        "js_jquery_zoom",
+        "js_jquery_countdown"
+    ]
+}
+ @endschema
+
+<template>
+	<div class="lh-wrapper">
+        <div class="lh-banner">
+            <div class="lh-image">
+                <div v-html="lang(settings.image)" class="image"></div>
+            </div>
+            <div class="lh-text">
+                <h1 class="lh-heading" v-html="lang(settings.heading)"></h1>
+                <p class="lh-second" v-html="lang(settings.second)"></p>
+                <div class="signature" v-html="lang(settings.signature)"></div>
+                <div class="fullName" v-html="lang(settings.third)"></div>
+            </div>
+        </div>
+	</div>
+</template>
+
+<style>
+.lh-wrapper{
+    margin: 0 auto;
+    max-width: 1170px;
+    margin-bottom: 100px;
+}
+.lh-banner{
+    display: flex;
+    flex-direction: row;
+    gap: 0 30px;
+    height: 388px;
+    margin-top: 50px;
+}
+.lh-image{
+    max-width: 570px;
+    width: 100%;
+}
+.lh-image img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.lh-text{
+    width: calc(100% - 570px - 30px);
+}
+.lh-heading{
+    font-size: 32px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #050505;
+    margin-bottom: 21px;
+}
+.lh-second{
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #5a5a5a;
+    margin-bottom: 40px;
+}
+.signature{
+    width: 205px;
+    margin-bottom: 21px;
+}
+.fullName{
+    font-size: 16px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #5a5a5a;
+    text-transform: uppercase;
+}
+</style>

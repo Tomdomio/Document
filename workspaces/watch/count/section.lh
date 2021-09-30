@@ -1,0 +1,24 @@
+@schema
+{
+    "name": "Count",
+    "author": "LayoutHub Team",
+    "website": "https:\/\/www.LayoutHub.com",
+    "version": "1.0",
+    "category": "Testimonials",
+    "platform": "shopify",
+    "vendors": [
+        "css_line_icon",
+        "css_layouthub_base",
+        "css_swiper_slider",
+        "js_swiper_slider",
+        "js_jquery_zoom",
+        "js_jquery_countdown"
+    ]
+}
+ @endschema
+
+<template>
+	<div class="lh-wrapper">
+        <div class="abc" v-html="settings.heading"></div>
+	</div>
+</template>
