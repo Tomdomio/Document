@@ -9,7 +9,7 @@
   "author": "LayoutHub Team",
   "website": "https://www.LayoutHub.com",
   "version": "1.0",
-  "sections": ["story", "single", "count"],
+  "sections": ["story", "single", "count", "items"],
   "theme": {
     "font_family": "Manrope",
     "title_font_family": "Manrope",
