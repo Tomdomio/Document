@@ -16,22 +16,31 @@
           {
             name: "Free Returns",
             desc: "Free Returns",
+            font_icon_1: "lni lni-facebook-original",
+            font_icon_2: "lni lni-instagram-filled",
+            font_icon_3: "lni lni-twitter-filled",
             image: {
-              src: "%URL%/assets/1.jpg",
+              src: "%URL%/assets/5.jpg",
             },
           },
           {
             name: "Free Returns",
             desc: "Free Returns",
+            font_icon_1: "lni lni-facebook-original",
+            font_icon_2: "lni lni-instagram-filled",
+            font_icon_3: "lni lni-twitter-filled",
             image: {
-              src: "%URL%/assets/2.jpg",
+              src: "%URL%/assets/6.jpg",
             },
           },
           {
             name: "Free Returns",
             desc: "Free Returns",
+            font_icon_1: "lni lni-facebook-original",
+            font_icon_2: "lni lni-instagram-filled",
+            font_icon_3: "lni lni-twitter-filled",
             image: {
-              src: "%URL%/assets/3.jpg",
+              src: "%URL%/assets/7.jpg",
             },
           },
         ],
@@ -40,9 +49,41 @@
         },
         params: [
           {
-            name: "text",
+            name: "name",
             type: "text",
-            label: "Text",
+            label: "First text",
+          },
+          {
+            name: "desc",
+            type: "text",
+            label: "Second text",
+          },
+          {
+            name: "font_icon",
+            label: "Font Icon 1",
+            type: "icon_picker",
+            options: {
+              source: "https://dev.layouthub.com/storage/libraries/LineIcons/LineIcons.css",
+              ext_class: "lni",
+            },
+          },
+          {
+            name: "font_icon_2",
+            label: "Font Icon 2",
+            type: "icon_picker",
+            options: {
+              source: "https://dev.layouthub.com/storage/libraries/LineIcons/LineIcons.css",
+              ext_class: "lni",
+            },
+          },
+          {
+            name: "font_icon_3",
+            label: "Font Icon 3",
+            type: "icon_picker",
+            options: {
+              source: "https://dev.layouthub.com/storage/libraries/LineIcons/LineIcons.css",
+              ext_class: "lni",
+            },
           },
           {
             name: "image",

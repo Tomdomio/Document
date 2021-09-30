@@ -3,15 +3,21 @@
     tab_name: "Story",
     settings: [
       {
-        name: "title",
+        name: "heading",
+        label: "Heading text",
         type: "text",
-        label: "Heading",
         value: "Our Story",
       },
       {
-        name: "smallTitle",
+        name: "router_1",
+        label: "First router",
         type: "text",
-        label: "Title",
+        value: "Home",
+      },
+      {
+        name: "router_2",
+        label: "Second router",
+        type: "text",
         value: "About us",
       },
     ],

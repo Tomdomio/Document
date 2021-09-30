@@ -6,10 +6,10 @@
     "version": "1.0",
     "category": "Testimonials",
     "platform": "shopify",
-    "vendors": []
+    "vendors": [
+    ]
 }
  @endschema
-
 
 
 
@@ -17,17 +17,14 @@
 	<div class="lh-wrapper">
         <div class="contain">
             <div class="heading">
-                <h1 v-html="settings.title"></h1>
-                <span>Home/</span><span v-html="settings.smallTitle"></span>
+                <h1 v-html="settings.heading"></h1>
+                <span v-html="settings.router_1"></span>/<span v-html="settings.router_2"></span>
             </div>
 	    </div>
 	</div>
 </template>
-<script>
-export default {
 
-}
-</script>
+
 <style>
 .contain{
     max-width: 1170px;
@@ -35,9 +32,19 @@ export default {
 }
 .heading{
     margin-top: 50px;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #050505;
 }
 .heading h1{
     font-size: 64px;
     font-weight: 600;
+    margin-bottom: 8px;
+}
+.heading span{
+    font-size: 16px;
+    color: #050505;
 }
 </style>

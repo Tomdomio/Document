@@ -9,36 +9,60 @@
     "vendors": [
         "css_line_icon",
         "css_layouthub_base",
-        "css_swiper_slider",
-        "js_swiper_slider",
-        "js_jquery_zoom",
-        "js_jquery_countdown"
+        "css_swiper_slider"
     ]
 }
  @endschema
 
 <template>
 	<div class="lh-container">
-        <h1 class="heading" v-html="settings.heading"></h1>
+        <h1 class="heading" v-html="lang(settings.heading)"></h1>
         <div class="lh-row">
             <div v-for="(item, index) in settings.group_1" :key="index" class="lh-col-md-4 lh-col-12">
                 <div class="lh-items">
-                    <div class="lh-items-image" v-html="item.image"></div>
-                </div>
-                <div class="lh-social">
-                    <div class="lh-social-icon"></div>
+                    <div class="lh-text">
+                        <div class="lh-flex-text">
+                            <div class="lh-items-name" v-html="lang(item.name)"></div>
+                            <div class="lh-items-desc" v-html="lang(item.desc)"></div>
+                        </div>
+                        <div class="lh-col-icon">
+                            <div class="lh-items-icon_1"><i :class="item.font_icon_1"></i></div>
+                            <div class="lh-items-icon_2"><i :class="item.font_icon_2"></i></div>
+                            <div class="lh-items-icon_3"><i :class="item.font_icon_3"></i></div>
+                        </div>
+                    </div>
+                    <div class="lh-items-image" v-html="lang(item.image)"></div>
                 </div>
             </div>
         </div>
     </div>
 </template>
 <style>
+.lh-col-icon{
+    font-size: 25px;
+    color: white;
+    display: flex;
+    gap: 0 12px;
+    margin-bottom: 24px;
+}
 .lh-container{
     margin-bottom: 100px;
 }
+.lh-row{
+    gap: 26px 0;
+    height: 405px;
+}
+.lh-items{
+    position: relative;
+}
 .lh-items img{
     height: 100%;
-    object-fit:cover;
+    width: 100%;
+    object-fit: cover;
+}
+.flex-text{
+    display: flex;
+    align-items: center;
 }
 .heading{
     margin-left: 20px;
@@ -50,5 +74,42 @@
     letter-spacing: normal;
     color: #000;
     margin-bottom: 25px;
+    position: relative;
+}
+.heading::before {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 1px;
+    background-color: #050505;
+    top: 50%;
+    left: 35%;
+    transform: translateY(-50%);
+}
+.lh-text{
+    margin-left: 24px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.lh-items-name{
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #fff;
+    margin-bottom: 8px;
+}
+.lh-items-desc{
+    font-size: 24px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #fff;
+    margin-bottom: 8px;
 }
 </style>

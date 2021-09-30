@@ -3,14 +3,6 @@
     tab_name: "Single",
     settings: [
       {
-        name: "image",
-        label: "Single image",
-        type: "single_image",
-        value: {
-          src: "%URL%assets/7.jpg",
-        },
-      },
-      {
         name: "heading",
         label: "First text",
         type: "text",
@@ -36,6 +28,14 @@
         label: "Third text",
         type: "text",
         value: "Founder & CEO",
+      },
+      {
+        name: "image",
+        label: "Single image",
+        type: "single_image",
+        value: {
+          src: "%URL%assets/1.png",
+        },
       },
     ],
   },
