@@ -15,9 +15,7 @@
 
 <template>
 	<div class="lh-wrapper">
-        <img :src="settings.logo" :alt="settings.title" width="500"/>
-        <h3>{{upperCase}}</h3>
-		<MyComponent />
+
 	</div>
 </template>
 <script>
