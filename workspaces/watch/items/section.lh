@@ -1,6 +1,6 @@
 @schema
 {
-    "name": "Count",
+    "name": "Items",
     "author": "LayoutHub Team",
     "website": "https:\/\/www.LayoutHub.com",
     "version": "1.0",
@@ -19,17 +19,14 @@
 
 <template>
 	<div class="lh-container">
+        <h1 class="heading" v-html="settings.heading"></h1>
         <div class="lh-row">
-            <div class="lh-col-md-12 lh-col-12 center">
-                <div class="heading" v-html="lang(settings.heading)"></div>
-                <div class="description" v-html="lang(settings.description)"></div>
-            </div>
-        </div>
-        <div class="lh-row">
-            <div v-for="(item, index) in settings.group_1" :key="index" class="lh-col-md-3 lh-col-12">
-                <div class="lh-items center">
-                    <h4 v-html="lang(item.name)" class="lh-item-count"></h4>
-                    <div v-html="lang(item.desc)" class="lh-item-desc"></div>
+            <div v-for="(item, index) in settings.group_1" :key="index" class="lh-col-md-4 lh-col-12">
+                <div class="lh-items">
+                    <div class="lh-items-image" v-html="item.image"></div>
+                </div>
+                <div class="lh-social">
+                    <div class="lh-social-icon"></div>
                 </div>
             </div>
         </div>
@@ -39,47 +36,19 @@
 .lh-container{
     margin-bottom: 100px;
 }
-.lh-row{
-    max-width: 1170px;
-    margin: 0 auto;
+.lh-items img{
+    height: 100%;
+    object-fit:cover;
 }
 .heading{
-    margin-bottom: 8px;
+    margin-left: 20px;
     font-size: 32px;
-    font-weight: bold;
+    font-weight: 600;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.5;
     letter-spacing: normal;
-    color: #050505;
-}
-.description{
-  margin-bottom: 61px;
-  opacity: 0.6;
-  font-size: 16px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.5;
-  letter-spacing: normal;
-  color: #5a5a5a;
-}
-.lh-item-count{
-    font-size: 48px;
-    font-weight: 800;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.5;
-    letter-spacing: normal;
-    color: #050505;
-}
-.lh-item-desc{
-    font-size: 18px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.33;
-    letter-spacing: normal;
-    color: #4a4a4a;
+    color: #000;
+    margin-bottom: 25px;
 }
 </style>

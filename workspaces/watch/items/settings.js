@@ -1,18 +1,12 @@
 [
   {
-    tab_name: "Count",
+    tab_name: "Items",
     settings: [
       {
         name: "heading",
-        label: "First text",
+        label: "Heading",
         type: "text",
-        value: "Some count that matters",
-      },
-      {
-        name: "description",
-        label: "Second text",
-        type: "text",
-        value: "Our achievement in the journey depicted in numbers",
+        value: "The Best of Professionals",
       },
       {
         name: "group_1",
@@ -20,20 +14,25 @@
         type: "group",
         value: [
           {
-            name: "40K+",
-            desc: "Happy Clients",
+            name: "Free Returns",
+            desc: "Free Returns",
+            image: {
+              src: "%URL%/assets/1.jpg",
+            },
           },
           {
-            name: "15K+",
-            desc: "Reviews",
+            name: "Free Returns",
+            desc: "Free Returns",
+            image: {
+              src: "%URL%/assets/2.jpg",
+            },
           },
           {
-            name: "16",
-            desc: "Countries",
-          },
-          {
-            name: "04",
-            desc: "Years of Journey",
+            name: "Free Returns",
+            desc: "Free Returns",
+            image: {
+              src: "%URL%/assets/3.jpg",
+            },
           },
         ],
         options: {
@@ -41,14 +40,14 @@
         },
         params: [
           {
-            name: "name",
+            name: "text",
             type: "text",
-            label: "Title",
+            label: "Text",
           },
           {
-            name: "desc",
-            type: "textarea",
-            label: "Description",
+            name: "image",
+            type: "single_image",
+            label: "Image",
           },
         ],
       },

@@ -1,6 +1,6 @@
 [
   {
-    tab_name: "Count",
+    tab_name: "Counter",
     settings: [
       {
         name: "heading",
@@ -43,7 +43,7 @@
           {
             name: "name",
             type: "text",
-            label: "Title",
+            label: "Count",
           },
           {
             name: "desc",

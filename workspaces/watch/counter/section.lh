@@ -1,6 +1,6 @@
 @schema
 {
-    "name": "Count",
+    "name": "Counter",
     "author": "LayoutHub Team",
     "website": "https:\/\/www.LayoutHub.com",
     "version": "1.0",
@@ -42,6 +42,7 @@
 .lh-row{
     max-width: 1170px;
     margin: 0 auto;
+    row-gap: 30px;
 }
 .heading{
     margin-bottom: 8px;
