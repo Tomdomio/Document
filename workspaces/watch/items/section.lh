@@ -26,9 +26,9 @@
                             <div class="lh-items-desc" v-html="lang(item.desc)"></div>
                         </div>
                         <div class="lh-col-icon">
-                            <div class="lh-items-icon_1"><i :class="item.font_icon_1"></i></div>
-                            <div class="lh-items-icon_2"><i :class="item.font_icon_2"></i></div>
-                            <div class="lh-items-icon_3"><i :class="item.font_icon_3"></i></div>
+                            <div class="lh-items-icon"><i :class="item.font_icon_1"></i></div>
+                            <div class="lh-items-icon"><i :class="item.font_icon_2"></i></div>
+                            <div class="lh-items-icon"><i :class="item.font_icon_3"></i></div>
                         </div>
                     </div>
                     <div class="lh-items-image" v-html="lang(item.image)"></div>
@@ -39,11 +39,20 @@
 </template>
 <style>
 .lh-col-icon{
-    font-size: 25px;
-    color: white;
+    font-size: 16px;
+    color: black;
     display: flex;
     gap: 0 12px;
     margin-bottom: 24px;
+}
+.lh-items-icon{
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }
 .lh-container{
     margin-bottom: 100px;
@@ -55,12 +64,12 @@
     position: relative;
 }
 .lh-items img{
-    height: 100%;
-    width: 100%;
+    min-height: 405px;
+    max-width: 100%;
     object-fit: cover;
 }
 .heading{
-    margin-left: 20px;
+    margin-left: 12px;
     font-size: 32px;
     font-weight: 600;
     font-stretch: normal;
@@ -82,9 +91,10 @@
     left: 105%;
 }
 .lh-text{
-    margin-left: 24px;
+    width: 100%;
+    padding: 0 24px;
     position: absolute;
-    bottom: 0;
+    bottom: 1px;
     left: 0;
     z-index: 1;
 }

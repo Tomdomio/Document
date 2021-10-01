@@ -29,7 +29,7 @@
             <div v-for="(item, index) in settings.group_1" :key="index" class="lh-col-md-3 lh-col-12">
                 <div class="lh-items center">
                     <h4 v-html="lang(item.name)" class="lh-item-count"></h4>
-                    <div v-html="lang(item.desc)" class="lh-item-desc"></div>
+                    <div v-html="lang(item.desc)" class="lh-item-desc left"></div>
                 </div>
             </div>
         </div>
@@ -37,27 +37,26 @@
 </template>
 <style>
 .lh-container{
-    margin-bottom: 100px;
-    padding: 90px 0;
+    margin-bottom: 99px;
+    max-width: 1170px;
     background-color: #f2f2f2;
+    padding: 73px 130px 73px 131px;
 }
 .lh-row{
-    max-width: 1170px;
     margin: 0 auto;
-    row-gap: 30px;
 }
 .heading{
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     font-size: 32px;
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.5;
+    line-height: 1.39;
     letter-spacing: normal;
     color: #050505;
 }
 .description{
-  margin-bottom: 61px;
+  margin-bottom: 40px;
   opacity: 0.6;
   font-size: 16px;
   font-weight: normal;
@@ -75,15 +74,17 @@
     line-height: 1.5;
     letter-spacing: normal;
     color: #050505;
+    margin-bottom: 10px;
 }
 .lh-item-desc{
-    font-size: 18px;
+    font-size: 16px;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.33;
     letter-spacing: normal;
     color: #4a4a4a;
+    opacity: 0.8;
 }
 @media (max-width: 991px){
     .heading{

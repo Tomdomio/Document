@@ -9,10 +9,7 @@
     "vendors": [
         "css_line_icon",
         "css_layouthub_base",
-        "css_swiper_slider",
-        "js_swiper_slider",
-        "js_jquery_zoom",
-        "js_jquery_countdown"
+        "css_swiper_slider"
     ]
 }
  @endschema
@@ -37,13 +34,12 @@
 .lh-wrapper{
     margin: 0 auto;
     max-width: 1170px;
-    margin-bottom: 100px;
 }
 .lh-banner{
     display: flex;
     flex-direction: row;
     gap: 0 30px;
-    margin-top: 50px;
+    margin: 52px 0 100px 0;
 }
 .lh-image{
     max-width: 570px;
@@ -52,34 +48,32 @@
 .lh-image img{
     display: block;
     width: 100%;
-
 }
 .lh-text{
-    width: calc(100% - 570px - 30px);
+    max-width: calc(100% - 570px - 30px);
 }
 .lh-heading{
     font-size: 32px;
     font-weight: 600;
     font-stretch: normal;
     font-style: normal;
-    line-height: normal;
+    line-height: 1.356;
     letter-spacing: normal;
     color: #050505;
-    margin-bottom: 21px;
+    margin-bottom: 22px;
 }
 .lh-second{
     font-size: 16px;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: normal;
+    line-height: 1.345;
     letter-spacing: normal;
     color: #5a5a5a;
     margin-bottom: 40px;
 }
 .signature{
-    width: 205px;
-    margin-bottom: 21px;
+    margin-bottom: 20px;
 }
 .fullName{
     font-size: 16px;
@@ -89,7 +83,7 @@
     line-height: normal;
     letter-spacing: normal;
     color: #5a5a5a;
-    text-transform: uppercase;
+    margin-left: 46px;
 }
 @media (max-width: 991px){
     .lh-wrapper{
@@ -100,9 +94,8 @@
         width: 100%;
     }
     .lh-banner{
-        gap: 0 15px;
-        height: 250px;
-        margin-top: 40px;
+        gap: 0 30px;
+        margin-top: 51px;
     }
     .lh-text{
         width: calc(100% - 370px - 15px);

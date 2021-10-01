@@ -6,7 +6,7 @@
         name: "heading",
         label: "Heading text",
         type: "text",
-        value: "Our Story",
+        value: "Our story",
       },
       {
         name: "router_1",

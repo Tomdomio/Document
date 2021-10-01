@@ -20,7 +20,7 @@
         label: "Single image",
         type: "single_image",
         value: {
-          src: "%URL%assets/spacing.png",
+          src: "%URL%assets/spacingg.png",
         },
         description: "Recommend Size : 196 x 88px",
       },
@@ -35,7 +35,7 @@
         label: "Single image",
         type: "single_image",
         value: {
-          src: "%URL%assets/1.png",
+          src: "%URL%assets/single.jpg",
         },
         description: "Recommend Size : 570 x 389px",
       },

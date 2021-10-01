@@ -41,7 +41,8 @@
 .heading h1{
     font-size: 64px;
     font-weight: 600;
-    margin-bottom: 8px;
+    margin-bottom: 1px;
+    line-height: 1.55;
 }
 .heading span{
     font-size: 16px;
