@@ -137,7 +137,10 @@
         display: block;
     }
     .lh-container{
-        height: 1300px;
+        height: auto;
+    }
+    .lh-items img{
+        height: auto;
     }
     .lh-col-md-4{
         max-width: 100%;
