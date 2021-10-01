@@ -47,4 +47,28 @@
     font-size: 16px;
     color: #050505;
 }
+@media (max-width: 991px){
+    .heading{
+        margin-left: 40px;
+    }
+    .heading h1{
+        font-size: 55px;
+    }
+    .heading span{
+        font-size: 14px;
+        color: #050505;
+    }
+}
+@media (max-width: 480px){
+    .heading{
+        margin-left: 20px;
+    }
+    .heading h1{
+        font-size: 40px;
+    }
+    .heading span{
+        font-size: 12px;
+        color: #050505;
+    }
+}
 </style>

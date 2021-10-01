@@ -50,7 +50,6 @@
 }
 .lh-row{
     gap: 26px 0;
-    height: 405px;
 }
 .lh-items{
     position: relative;
@@ -111,5 +110,45 @@
     letter-spacing: normal;
     color: #fff;
     margin-bottom: 8px;
+}
+@media (max-width: 991px){
+    .heading {
+        font-size: 28px;
+        margin-left: 5px;
+    }
+    .heading::before{
+        width: 50px;
+        left: 51%;
+    }
+    .lh-items-name{
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+    .lh-items-desc{
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+    .lh-container{
+        margin-bottom: 50px;
+    }
+}
+@media (max-width: 480px){
+    .lh-row{
+        display: block;
+    }
+    .lh-container{
+        height: 1300px;
+    }
+    .lh-col-md-4{
+        max-width: 100%;
+        height: auto;
+    }
+    .lh-items{
+        margin-bottom: 10px;
+    }
+    .heading{
+        font-size: 25px;
+    }
+    .heading::before{ display: none;}
 }
 </style>

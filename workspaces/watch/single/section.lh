@@ -92,4 +92,64 @@
     color: #5a5a5a;
     text-transform: uppercase;
 }
+@media (max-width: 991px){
+    .lh-wrapper{
+        max-width: 695px;
+    }
+    .lh-image{
+        max-width: 370px;
+        width: 100%;
+    }
+    .lh-banner{
+        gap: 0 15px;
+        height: 250px;
+        margin-top: 40px;
+    }
+    .lh-text{
+        width: calc(100% - 370px - 15px);
+    }
+    .lh-heading{
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+    .lh-second{
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        word-break: break-word;
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+    .signature{
+        width: 90px;
+        margin-bottom: 10px;
+    }
+    .lh-wrapper{
+        margin-bottom: 50px;
+    }
+}
+@media (max-width: 480px){
+    .lh-wrapper{
+        max-width: 330px;
+    }
+    .lh-image img{
+        height: 225px;
+        margin-bottom: 10px;
+    }
+    .lh-banner{
+        display: block;
+        height: 460px;
+    }
+    .lh-image{
+        width: 100%;
+    }
+    .lh-text{
+        width: 100%;
+    }
+    .lh-heading{
+        font-size: 25px;
+    }
+}
 </style>
