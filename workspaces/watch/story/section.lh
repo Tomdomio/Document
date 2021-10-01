@@ -18,7 +18,7 @@
         <div class="contain">
             <div class="heading">
                 <h1 v-html="settings.heading"></h1>
-                <span v-html="settings.router_1"></span>/<span v-html="settings.router_2"></span>
+                <span v-html="settings.router_1"></span>/ <span v-html="settings.router_2"></span>
             </div>
 	    </div>
 	</div>

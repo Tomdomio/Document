@@ -11,7 +11,7 @@
       {
         name: "second",
         label: "Second text",
-        type: "text",
+        type: "textarea",
         value:
           "Reprizo is a family-owned professional watch and jewelry repair store chain located in NewYork. We are experts in fixing and repairing watches from world-renowned brands including Rolex, Breitling, Bell & Ross, and many other brands. We offer a wide range of jewelry services and always provide a guarantee for what we do.",
       },
@@ -22,6 +22,7 @@
         value: {
           src: "%URL%assets/spacing.png",
         },
+        description: "Recommend Size : 196 x 88px",
       },
       {
         name: "third",
@@ -36,6 +37,7 @@
         value: {
           src: "%URL%assets/1.png",
         },
+        description: "Recommend Size : 570 x 389px",
       },
     ],
   },

@@ -11,7 +11,7 @@
       {
         name: "description",
         label: "Second text",
-        type: "text",
+        type: "textarea",
         value: "Our achievement in the journey depicted in numbers",
       },
       {

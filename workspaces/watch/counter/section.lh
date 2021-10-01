@@ -38,6 +38,8 @@
 <style>
 .lh-container{
     margin-bottom: 100px;
+    padding: 90px 0;
+    background-color: #f2f2f2;
 }
 .lh-row{
     max-width: 1170px;

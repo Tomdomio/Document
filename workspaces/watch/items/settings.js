@@ -89,6 +89,7 @@
             name: "image",
             type: "single_image",
             label: "Image",
+            description: "Recommend Size : 370 x 555px",
           },
         ],
       },
