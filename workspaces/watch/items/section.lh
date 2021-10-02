@@ -42,7 +42,8 @@
     font-size: 14px;
     color: black;
     display: flex;
-    gap: 0 12px;
+    gap: 12px;
+    flex-wrap: wrap;
     margin-bottom: 24px;
 }
 .lh-items-icon{
