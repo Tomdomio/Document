@@ -26,7 +26,7 @@
                             <div class="lh-items-desc" v-html="lang(item.desc)"></div>
                         </div>
                         <div class="lh-col-icon">
-                            <div class="lh-items-icon" v-for="(icon,index) in item.group_inner" :key="index" >
+                            <div class="lh-items-icon" v-for="(icon, index) in item.group_inner" :key="index" >
                                 <div class="icon-link" v-html="icon.link"></div>
                             </div>
                         </div>
@@ -39,7 +39,7 @@
 </template>
 <style>
 .lh-col-icon{
-    font-size: 16px;
+    font-size: 14px;
     color: black;
     display: flex;
     gap: 0 12px;
@@ -81,17 +81,18 @@
     letter-spacing: normal;
     color: #000;
     display: inline-block;
-    margin-bottom: 25px;
+    margin-bottom: 28px;
     position: relative;
 }
 .heading::before {
     content: "";
     position: absolute;
     width: 60px;
-    height: 1px;
+    height: 2px;
     background-color: #050505;
     top: 50%;
     left: 105%;
+    opacity: 0.5;
 }
 .lh-text{
     width: 100%;
@@ -196,7 +197,7 @@
         height: 30px;
     }
     .lh-col-icon{
-        font-size: 12px;
+        font-size: 16px;
     }
     .heading{
         font-size: 25px;

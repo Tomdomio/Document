@@ -116,7 +116,7 @@
             params: [
               {
                 name: "link",
-                label: "Link using icon",
+                label: "Icon link",
                 type: "link",
                 description:
                   'You can find icons from free resources <a href="https://lineicons.com/" target="_blank">https://lineicons.com</a>',

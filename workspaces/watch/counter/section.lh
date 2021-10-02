@@ -42,7 +42,7 @@
     background-color: #f2f2f2;
 }
 .contain{
-    padding: 73px 75px;
+    padding: 73px 59px;
 }
 .lh-row{
     margin: 0 auto;
