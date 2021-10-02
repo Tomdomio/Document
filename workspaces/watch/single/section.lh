@@ -96,9 +96,11 @@
     .lh-banner{
         gap: 0 30px;
         margin-top: 51px;
+        margin: 25px 0 25px 0;
     }
     .lh-text{
-        width: calc(100% - 370px - 15px);
+        max-width: unset;
+        width: 100%;
     }
     .lh-heading{
         font-size: 28px;
@@ -106,7 +108,7 @@
     }
     .lh-second{
         display: -webkit-box;
-        -webkit-line-clamp: 4;
+        -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -118,8 +120,8 @@
         width: 90px;
         margin-bottom: 10px;
     }
-    .lh-wrapper{
-        margin-bottom: 50px;
+    .fullName{
+        margin-left: 0;
     }
 }
 @media (max-width: 480px){
@@ -139,6 +141,9 @@
     }
     .lh-text{
         width: 100%;
+    }
+    .signature{
+        font-size: 14px;
     }
     .lh-heading{
         font-size: 25px;

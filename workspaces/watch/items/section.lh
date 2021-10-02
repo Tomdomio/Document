@@ -26,9 +26,9 @@
                             <div class="lh-items-desc" v-html="lang(item.desc)"></div>
                         </div>
                         <div class="lh-col-icon">
-                            <div class="lh-items-icon"><i :class="item.font_icon_1"></i></div>
-                            <div class="lh-items-icon"><i :class="item.font_icon_2"></i></div>
-                            <div class="lh-items-icon"><i :class="item.font_icon_3"></i></div>
+                            <div class="lh-items-icon" v-for="(icon,index) in item.group_inner" :key="index" >
+                                <div class="icon-link" v-html="icon.link"></div>
+                            </div>
                         </div>
                     </div>
                     <div class="lh-items-image" v-html="lang(item.image)"></div>
@@ -53,6 +53,9 @@
     align-items: center;
     justify-content: center;
     display: flex;
+}
+.lh-items-icon i{
+    color: #000;
 }
 .lh-container{
     margin-bottom: 100px;
@@ -134,21 +137,35 @@
     .heading {
         font-size: 28px;
         margin-left: 5px;
+        margin-bottom: 10px;
     }
     .heading::before{
         width: 50px;
-        left: 51%;
     }
     .lh-items-name{
-        font-size: 14px;
+        font-size: 12px;
         margin-bottom: 5px;
     }
+    .lh-text{
+        padding: 0 15px;
+    }
     .lh-items-desc{
-        font-size: 20px;
+        font-size: 16px;
         margin-bottom: 5px;
+    }
+    .lh-col-icon{
+        font-size: 10px;
+        margin-bottom: 10px;
+    }
+    .lh-items-icon{
+        width: 20px;
+        height: 20px;
     }
     .lh-container{
         margin-bottom: 50px;
+    }
+    .lh-items img{
+        min-height: 315px;
     }
 }
 @media (max-width: 480px){
@@ -159,7 +176,7 @@
         height: auto;
     }
     .lh-items img{
-        height: 450px;
+        min-height: 450px;
     }
     .lh-col-md-4{
         max-width: 100%;
@@ -168,8 +185,22 @@
     .lh-items{
         margin-bottom: 10px;
     }
+    .lh-items-name{
+        font-size: 14px;
+    }
+    .lh-items-desc{
+        font-size: 18px;
+    }
+    .lh-items-icon{
+        width: 30px;
+        height: 30px;
+    }
+    .lh-col-icon{
+        font-size: 12px;
+    }
     .heading{
         font-size: 25px;
+        margin-bottom: 10px;
     }
     .heading::before{ display: none;}
 }
