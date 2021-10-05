@@ -1,0 +1,176 @@
+@schema
+{
+    "name": "Services",
+    "author": "LayoutHub Team",
+    "website": "https:\/\/www.LayoutHub.com",
+    "version": "1.0",
+    "category": "Testimonials",
+    "platform": "shopify",
+    "vendors": [
+        "css_line_icon",
+        "css_layouthub_base",
+        "css_swiper_slider"
+    ],
+    "configs": {
+        "desktop": {
+            "background": {
+                "color": "#251F42",
+                "image": "",
+                "position": "center center",
+                "repeat": "no-repeat",
+                "size": "cover"
+            },
+            "section_box": {
+                "padding": {
+                    "top": "110px",
+                    "bottom": "100px"
+                }
+            }
+        },
+        "tablet": {
+            "section_box": {
+                "padding": {
+                    "top": "80px",
+                    "bottom": "80px"
+                }
+            }
+        },
+        "mobile": {
+            "section_box": {
+                "padding": {
+                    "top": "60px",
+                    "bottom": "60px"
+                }
+            }
+        }
+    }
+}
+ @endschema
+
+<template>
+	<div class="lh-wrapper">
+        <div class="lh-container">
+            <div class="lh-row">
+                <div class="lh__sub1">
+                    <div class="lh-container">
+                        <div class="lh-row">
+                            <div class="lh__sub1-image lh-col-md-5" v-html="lang(settings.prod)"></div>
+                            <div class="lh__sub1-text lh-col-md-6">
+                                <h1 class="lh__sub1-text--heading" v-html="lang(settings.heading)"></h1>
+                                <p class="lh__sub1-text--content" v-html="lang(settings.content)"></p>
+                                <div class="lh-row">
+                                    <div class="lh__sub1-icon lh-col-md-6" v-for="(e, i) in settings.group_1" :key="i">
+                                        <div class="lh__sub1-icon--item">
+                                            <i :class="e.icon"></i>
+                                        </div>
+                                        <h6 class="lh__sub1-icon--content" v-html="lang(e.content)"></h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lh__sub2">
+                    <div class="lh-container">
+                        <div class="lh-row">
+                        </div>
+                    </div>
+                </div>
+                <div class="lh__sub3">
+                    <div class="lh-row"></div>
+                </div>
+            </div>
+        </div>
+	</div>
+</template>
+<style lang="scss">
+// variable
+    $color-text: #fff;
+
+.lh-row{
+    align-items: center;
+    justify-content: space-between;
+}
+.lh__sub1{
+    margin-bottom: 60px;
+    &-text{
+        &--heading{
+            font-weight: bold;
+            font-size: 44px;
+            line-height: 58px;
+            color: $color-text;
+            margin-bottom: 24px;
+        }
+        &--content{
+            font-size: 16px;
+            line-height: 24px;
+            color: $color-text;
+            opacity: 0.6;
+            margin-bottom: 60px;
+        }
+    }
+    &-icon{
+        display: flex;
+        gap: 0 18px;
+        align-items: center;
+        margin-bottom: 24px;
+        &--item{
+            background-color: #9481EB;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 4px;
+            & i{
+                color: #fff;
+                font-size: 10px;
+            }
+        }
+        &--content{
+            color: $color-text;
+            font-size: 16px;
+            line-height: 24px
+        }
+    }
+}
+@media (max-width: 991px){
+    .lh-row{
+    flex-direction: column;
+    }
+    .lh-col-md-5,
+    .lh-col-md-6{
+        flex: 100%;
+        max-width: 100%;
+    }
+    .lh__sub1{
+        margin-bottom: 100px;
+        &-text{
+            &--heading{
+                font-size: 31px;
+                line-height: 48px;
+                margin-bottom: 20px;
+            }
+            &--content{
+                font-size: 16px;
+                line-height: 24px;
+            }
+        }
+        &-image{
+            margin-bottom: 60px;
+            padding-left: 93px;
+        }
+    }
+}
+@media (max-width: 480px){
+    .lh-col-md-5,
+    .lh-col-md-6{
+        width: 100%;
+    }
+    .lh__sub1{
+        &-image{
+            padding-left: 15px;
+        }
+    }
+}
+</style>

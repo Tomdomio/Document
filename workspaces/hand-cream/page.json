@@ -1,0 +1,21 @@
+{
+  "name": "Hand Cream",
+  "id": "WbxF1MHkrEY7C8PD",
+  "task_id": 681,
+  "platform": "shopify",
+  "complete": false,
+  "dev": "minhlh",
+  "category": "landing",
+  "author": "LayoutHub Team",
+  "website": "https://www.LayoutHub.com",
+  "version": "1.0",
+  "sections": ["header", "services"],
+  "theme": {
+    "font_family": "DM Sans",
+    "title_font_family": "Playfair Display",
+    "color": "#bacdd9",
+    "font_size": "16"
+  },
+  "label": "Hand Cream",
+  "action": "item"
+}

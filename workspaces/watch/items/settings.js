@@ -106,7 +106,7 @@
           },
           {
             name: "desc",
-            type: "text",
+            type: "textarea",
             label: "Second text",
           },
           {

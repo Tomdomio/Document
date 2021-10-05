@@ -1,0 +1,161 @@
+@schema
+{
+    "name": "Header",
+    "author": "LayoutHub Team",
+    "website": "https:\/\/www.LayoutHub.com",
+    "version": "1.0",
+    "category": "Testimonials",
+    "platform": "shopify",
+    "vendors": [
+        "css_line_icon",
+        "css_layouthub_base",
+        "css_swiper_slider"
+    ],
+    "configs": {
+        "desktop": {
+            "background": {
+                "color": "#8876E4",
+                "image": "",
+                "position": "center center",
+                "repeat": "no-repeat",
+                "size": "cover"
+            },
+            "section_box": {
+                "padding": {
+                    "top": "142px",
+                    "bottom": "143px"
+                }
+            }
+        },
+        "tablet": {
+            "section_box": {
+                "padding": {
+                    "top": "80px",
+                    "bottom": "80px"
+                }
+            }
+        },
+        "mobile": {
+            "section_box": {
+                "padding": {
+                    "top": "60px",
+                    "bottom": "60px"
+                }
+            }
+        }
+    }
+}
+ @endschema
+
+<template>
+	<div class="lh-wrapper">
+        <div class="lh-container">
+            <div class="lh-row">
+                <div class="lh__text lh-col-md-5">
+                    <h1 class="lh__text-heading" v-html="lang(settings.heading)"></h1>
+                    <div class="lh__text-star">
+                        <span class="lh__text-star--item"><i class="lni lni-star-filled"></i></span>
+                        <span class="lh__text-star--item"><i class="lni lni-star-filled"></i></span>
+                        <span class="lh__text-star--item"><i class="lni lni-star-filled"></i></span>
+                        <span class="lh__text-star--item"><i class="lni lni-star-filled"></i></span>
+                        <span class="lh__text-star--item"><i class="lni lni-star-filled"></i></span>
+                        <span class="lh__text-star--desc">- 5.0 Stars Rating</span>
+                    </div>
+                    <p class="lh__text-content" v-html="lang(settings.content)"></p>
+                    <a href="#" class="lh__text-btn lh-col-md-8 " v-html="lang(settings.text_btn)"></a>
+                </div>
+                <div class="lh__image lh-col-md-7" v-html="lang(settings.prod)"></div>
+            </div>
+        </div>
+	</div>
+</template>
+<style lang="scss">
+// variable
+    $color-text: #fff;
+
+//sass
+    .lh-row{
+        align-items: center;
+    }
+    .lh__text{
+        &-heading{
+            color: $color-text;
+            font-size: 60px;
+            font-weight: bold;
+            line-height: 76px;
+            margin-bottom: 36px;
+        }
+        &-star{
+            margin-bottom: 16px;
+            &--item{
+                margin-right: 3.33px;
+                color: #FFE600;
+            }
+            &--desc{
+                margin-left: 11.16px;
+                color: $color-text;
+                font-family: "DM Sans";
+                font-style: normal;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 24px;
+            }
+        }
+        &-content{
+            font-family: "DM Sans";
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 24px;
+            opacity: 0.6;
+            color: $color-text;
+            margin-bottom: 40px;
+        }
+        &-btn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            outline: none;
+            font-weight: bold;
+            font-size: 16px;
+            padding: 17.5px 56px;
+            cursor: pointer;
+            background-color: #1E262D;
+            border-radius: 10px;
+            color: $color-text;
+        }
+    }
+@media (max-width: 991px){
+    .lh__text{
+        &-heading{
+            font-size: 40px;
+            line-height: 52px;
+            margin-bottom: 30px;
+        }
+    }
+    .lh-col-md-5{
+        max-width: 100%;
+        flex: 100%;
+    }
+    .lh-col-md-7{
+        max-width: 100%;
+        flex: 100%;
+    }
+    .lh__text-btn{
+        margin-bottom: 60px;
+    }
+}
+@media (max-width: 480px){
+    .lh__text{
+        &-heading{
+            font-size: 38px;
+        }
+        &-content{
+            margin-bottom: 35px;
+        }
+    }
+    .lh-col-md-8{
+        max-width: 85.666667%;
+    }
+}
+</style>
