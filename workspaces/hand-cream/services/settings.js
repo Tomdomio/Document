@@ -88,4 +88,43 @@
       },
     ],
   },
+  {
+    tab_name: "Group",
+    settings: [
+      {
+        type: "text",
+        name: "span",
+        label: "Text",
+        value: "''",
+      },
+      {
+        type: "textarea",
+        label: "Content",
+        name: "descrip",
+        value:
+          "Our products are designed to protect, support, moisturize and enhance the look of skin. Giving you and your family the feeling of confidence that comes from radiant, healthy-looking skin.",
+      },
+      {
+        type: "single_image",
+        name: "avatar",
+        label: "Single Product",
+        value: {
+          src: "%URL%assets/2.png",
+        },
+        description: "Recommend Size : 60 x 60px",
+      },
+      {
+        type: "text",
+        name: "name_avt",
+        label: "Name Avatar",
+        value: "Dr. Michelle Henry",
+      },
+      {
+        type: "text",
+        name: "desc_avt",
+        label: "Description Avatar",
+        value: "NEW YORK DERMATOLOGIST",
+      },
+    ],
+  },
 ];
