@@ -72,13 +72,25 @@
                 </div>
                 <div class="lh__sub2">
                     <div class="lh-container">
-                        <div class="lh-row">
+                        <div class="lh-row lh-col-8">
                             <span class="lh__sub2-span" v-html="lang(settings.span)"></span>
+                            <div class="lh-sub__2-div" v-html="lang(settings.div)"></div>
+                            <div class="lh-lh__sub2-user">
+                                <div class="lh-lh__sub2-user--avt" v-html="lang(settings.avt)"></div>
+                                <div class="lh-lh__sub2-user--property">
+                                    <div class="lh-lh__sub2-user--property--name" v-html="lang(settings.names)"></div>
+                                    <div class="lh-lh__sub2-user--property--live" v-html="lang(settings.live)"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="lh__sub3">
-                    <div class="lh-row"></div>
+                    <div class="lh-container">
+                        <div class="lh-row">
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

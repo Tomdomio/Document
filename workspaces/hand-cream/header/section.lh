@@ -138,6 +138,7 @@
     }
 @media (max-width: 991px){
     .lh__text{
+        margin: unset;
         &-heading{
             font-size: 40px;
             line-height: 52px;
