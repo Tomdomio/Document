@@ -63,7 +63,7 @@
                     </div>
                     <p class="lh__text-content" v-html="lang(settings.content)"></p>
                     <div class="lh__text-button">
-                        <a href="#" class="lh__text-btn" v-html="lang(settings.text_btn)"></a>
+                        <a class="lh__text-btn" v-html="lang(settings.cta)"></a>
                     </div>
                 </div>
                 <div class="lh__image lh-col-md-7" v-html="lang(settings.prod)"></div>
@@ -130,10 +130,16 @@
             max-width: 270px;
             background-color: #1E262D;
             border-radius: 10px;
-            color: $color-text;
-        }
-        &-button{
-            width: 100%;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            transition: all 0.3s linear;
+            & a{
+                color: $color-text;
+                cursor: pointer;
+            }
+            &:hover{
+                background-color: #64646499;
+                transition: all 0.3s linear;
+            }
         }
     }
 @media (max-width: 991px){

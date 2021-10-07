@@ -70,11 +70,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="lh__sub2">
+                <div class="lh__sub2" :style="'background:' + show_color">
                     <div class="lh-container">
-                        <div class="lh-row">
+                        <div class="lh-row padding">
                             <div class="lh-row-sub2 lh-col-md-8">
-                                <span class="lh__sub2-span" v-html="lang(settings.span)"></span>
+                                <div class="lh__sub2-span" v-html="lang(settings.span)"></div>
                                 <div class="lh__sub2-div" v-html="lang(settings.div)"></div>
                                 <div class="lh__sub2-user">
                                     <div class="lh__sub2-user-avt" v-html="lang(settings.avt)"></div>
@@ -90,7 +90,17 @@
                 <div class="lh__sub3">
                     <div class="lh-container">
                         <div class="lh-row">
-
+                            <div class="lh-row-text lh-col-md-6">
+                                <div class="row-text-top">
+                                    <h1 class="lh-row-text-heading3" v-html="lang(settings.heading3)"></h1>
+                                    <p class="lh-row-text-content3" v-html="lang(settings.content3)"></p>
+                                </div>
+                                <div class="lh-row-text-bottom" v-for="(e, i) in settings.group_3" :key="i">
+                                    <div class="lh-row-text-bottom-percent" v-html="lang(e.text)"></div>
+                                    <div class="lh-row-text-bottom-intro" v-html="lang(e.content)"></div>
+                                </div>
+                            </div>
+                            <div class="lh-row-image lh-col-md-5" v-html="settings.img3"></div>
                         </div>
                     </div>
                 </div>
@@ -98,6 +108,15 @@
         </div>
 	</div>
 </template>
+<script>
+export default {
+    computed:{
+        show_color(){
+           return this.settings.color_picker;
+        }
+    }
+}
+</script>
 <style lang="scss">
 // variable
     $color-text: #fff;
@@ -140,7 +159,7 @@
             border-radius: 4px;
             & i{
                 color: #fff;
-                font-size: 10px;
+                font-size: 10px !important;
             }
         }
         &--content{
@@ -154,12 +173,18 @@
         margin-top: -10px;
     }
 }
+.padding{
+    padding: 82px 0;
+}
 .lh__sub2{
+    margin-bottom: 100px;
+    border-radius: 20px;
     &-span{
         font-size: 100px;
         color: $color-text;
         font-family: "Playfair Display";
-        line-height: 1;
+        line-height: 0.65;
+        margin-bottom: -7px;
     }
     &-div{
         font-family: "Playfair Display";
@@ -167,15 +192,21 @@
         font-size: 24px;
         line-height: 40px;
         margin-bottom: 30px;
+        letter-spacing: 0.23;
     }
     &-user{
         display: flex;
         justify-content: center;
+        align-items: center;
+        gap: 0 3px;
         &-avt{
-            padding: 0 8px;
+            max-width: 60px;
+            border-radius: 50%;
+            & img{
+                border-radius: inherit;
+            }
         }
         &-property{
-            padding: 0 8px;
             text-align: left;
             &-name{
                 font-family: "DM Sans";
@@ -185,9 +216,13 @@
                 line-height: 24px;
                 color: $color-text;
                 margin-bottom: 8px;
+                letter-spacing: 0.11;
+                margin-left: 11px;
             }
             &-live{
                 font-size: 12px;
+                margin-left: 10px;
+                letter-spacing: 0.01;
                 line-height: 16px;
                 opacity: 0.5;
                 color: $color-text;
@@ -199,6 +234,7 @@
     margin: 0 auto;
     text-align: center;
 }
+
 @media (max-width: 991px){
     .lh-row{
         flex-direction: column;
@@ -209,7 +245,7 @@
         max-width: 100%;
     }
     .lh__sub1{
-        margin-bottom: 100px;
+        margin-bottom: 30px;
         &-text{
             &--heading{
                 font-size: 31px;
@@ -224,6 +260,7 @@
         &-image{
             margin-bottom: 60px;
             padding-left: 93px;
+
         }
     }
 }
@@ -237,5 +274,38 @@
             padding-left: 15px;
         }
     }
+.lh__sub2{
+    max-width: 331px;
+    &-span{
+        font-size: 80px;
+    }
+    &-div{
+        font-size: 20px;
+        line-height: 32px;
+        margin-bottom: 30px;
+    }
+    &-user{
+        display: flex;
+        justify-content: center;
+        gap: 0 16px;
+        align-items: center;
+        &-avt{
+            max-width: 60px;
+            border-radius: 50%;
+            & img{
+                border-radius: inherit;
+            }
+        }
+        &-property{
+            &-live{
+                line-height: 15.62px;
+            }
+        }
+    }
+    .lh-col-md-8{
+        flex: 100%;
+        max-width: 100%;
+    }
+}
 }
 </style>

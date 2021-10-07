@@ -15,10 +15,13 @@
         value: "Essential creamdies to helps prevent & temporatily protect chafed, chapped or cracked skin, especially to help relieve.",
       },
       {
-        type: "text",
-        name: "text_btn",
-        label: "Content Button",
-        value: "ORDER NOW TODAY!",
+        name: "cta",
+        label: "Link using text",
+        type: "link",
+        value: {
+          href: "#",
+          text: "ORDER NOW TODAY!",
+        },
       },
       {
         type: "single_image",

@@ -16,12 +16,6 @@
           "Enriched with 20% organic Shea Butter, this hand cream penetrates quickly to protect, nourish and moisturize hands. Honey, almond extracts and coconut oil are blended with Shea Butter to create this extremely effective formula.",
       },
       {
-        type: "text",
-        name: "text_btn",
-        label: "Content Button",
-        value: "ORDER NOW TODAY!",
-      },
-      {
         type: "single_image",
         name: "prod",
         label: "Single Product",
@@ -102,7 +96,7 @@
         label: "Content",
         name: "div",
         value:
-          "“Our products are designed to protect, support, moisturize and enhance the look of skin. Giving you and your family the feeling of confidence that comes from radiant, healthy-looking skin.“",
+          "“ Our products are designed to protect, support, moisturize and enhance the look of skin. Giving you and your family the feeling of confidence that comes from radiant, healthy-looking skin.“",
       },
       {
         type: "single_image",
@@ -124,6 +118,65 @@
         name: "live",
         label: "Description Avatar",
         value: "NEW YORK DERMATOLOGIST",
+      },
+      {
+        name: "color_picker",
+        label: "Select color",
+        type: "color_picker",
+        value: "#8876E4",
+      },
+    ],
+  },
+  {
+    tab_name: "Hero",
+    settings: [
+      {
+        type: "text",
+        name: "heading3",
+        label: "Text",
+        value: "Advanced repair Hom’s hand cream",
+      },
+      {
+        type: "textarea",
+        label: "Content",
+        name: "content3",
+        value:
+          "Specifically made for hands to help repair dry skin. Frequent washing and external factors like the environment can strip hands of vital elements needed to keep hands soft, smooth and hydrated. Advanced Repair Hand Cream leaves hands noticeably softer and smoother after just one application.",
+      },
+      {
+        name: "group_3",
+        label: "Simple Group",
+        type: "group",
+        value: [
+          {
+            text: "100%",
+            content: "natural Ingredients",
+          },
+        ],
+        options: {
+          add_text: "Add new item",
+        },
+        params: [
+          {
+            name: "text",
+            type: "text",
+            label: "Heading",
+          },
+          {
+            name: "content",
+            type: "textarea",
+            label: "Content",
+          },
+        ],
+      },
+      {
+        type: "single_image",
+        name: "img3",
+        label: "Image Change",
+        value: {
+          src: "%URL%assets/2.png",
+        },
+        description: "Recommend Size : 457 x 550px",
       },
     ],
   },
