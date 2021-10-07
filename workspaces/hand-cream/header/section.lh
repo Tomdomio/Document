@@ -146,8 +146,8 @@
     .lh__text{
         margin: unset;
         &-heading{
-            font-size: 40px;
-            line-height: 52px;
+            font-size: 60px;
+            line-height: 76px;
             margin-bottom: 30px;
         }
     }

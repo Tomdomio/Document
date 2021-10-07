@@ -152,6 +152,14 @@
             text: "100%",
             content: "natural Ingredients",
           },
+          {
+            text: "85%",
+            content: "Moisture Increase",
+          },
+          {
+            text: "20%",
+            content: "Shea butter",
+          },
         ],
         options: {
           add_text: "Add new item",
