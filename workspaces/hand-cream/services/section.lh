@@ -306,6 +306,7 @@ export default {
 }
 .lh-image.lh-activee {
     display: flex;
+    justify-content: center;
 }
 .lh-tab-top.lh-active {
     display : flex;
@@ -314,7 +315,7 @@ export default {
     display : none;
 }
 .lh__sub3 .lh-row{
-    gap: 30px 0;
+    gap: 60px 0;
 }
 .lh-tab-list-ct{
     padding-top: 30px;
@@ -336,22 +337,15 @@ export default {
         letter-spacing: 0;
     }
 }
-.lh-image{
-    &-img{
-        margin-left: 70px;
-    }
-}
-.lh-tablet {
-    display : none;
-}
 @media screen and (max-width: 991px){
-    .lh-row{
-        flex-direction: column;
-    }
     .lh-col-md-5,
     .lh-col-md-6{
         flex: 100%;
         max-width: 100%;
+    }
+    .lh-jus .lh-col-md-4{
+        flex: 0 0 50%;
+        max-width: 50%;
     }
     .lh__sub1{
         margin-bottom: 30px;
@@ -366,19 +360,6 @@ export default {
 
         }
     }
-    .lh-items .lh-row{
-        flex-direction: unset;
-        gap: 30px 0;
-        margin-bottom: 60px;
-        padding: 0 15px;
-    }
-    .columns .lh-col-md-4{
-        flex: calc(50% - 30px);
-        max-width: calc(50% - 30px);
-    }
-    .lh-items .lh-col-md-5{
-        padding-left: 100px;
-    }
 }
 @media screen and (max-width: 480px){
     .lh-col-md-5,
@@ -386,13 +367,23 @@ export default {
         width: 100%;
     }
     .lh__sub1{
-        &--heading{
-        font-size: 31px;
-        line-height: 48px;
+        &-text{
+            &--heading{
+                font-size: 32px;
+                line-height: 48px;
+            }
         }
         &-image{
             padding-left: 15px;
         }
+    }
+    .lh__text-heading{
+        font-size: 38px;
+        line-height: 52px;
+    }
+    .lh-tab-top-item-name{
+        font-size: 32px;
+        line-height: 48px;
     }
 .lh__sub2{
     max-width: 331px;
@@ -427,24 +418,10 @@ export default {
         max-width: 100%;
         }
     }
-    .lh-row-text-top{
-        margin-top: -22px;
-    }
-    .columns .lh-col-md-4{
-        flex: 45%;
-        max-width: calc(50% - 7px);
-        padding: 24px 0 0 0;
-        margin: 0 7px;
-    }
-    .lh-row-text-heading3{
-        font-size: 30px;
-        line-height: 48px;
-    }
-    .lh-row-image img{
-        margin-left: 0;
-    }
-    .lh-items .lh-row{
-        padding: 0 8px;
+    .lh-tab-list-ct-percent{
+        font-size: 32px;
+        line-height: 43px;
+        margin-bottom: 16px;
     }
 }
 </style>
