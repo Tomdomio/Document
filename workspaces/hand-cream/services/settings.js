@@ -131,34 +131,54 @@
     tab_name: "Hero",
     settings: [
       {
-        type: "text",
-        name: "heading3",
-        label: "Text",
-        value: "Advanced repair Hom’s hand cream",
-      },
-      {
-        type: "textarea",
-        label: "Content",
-        name: "content3",
-        value:
-          "Specifically made for hands to help repair dry skin. Frequent washing and external factors like the environment can strip hands of vital elements needed to keep hands soft, smooth and hydrated. Advanced Repair Hand Cream leaves hands noticeably softer and smoother after just one application.",
-      },
-      {
-        name: "group_3",
+        name: "group_6",
         label: "Simple Group",
         type: "group",
         value: [
           {
-            text: "100%",
-            content: "natural Ingredients",
+            percent: "100%",
+            desc: "natural Ingredients",
+            group_inner: [
+              {
+                name: "Advanced repair Hom’s hand cream",
+                intro:
+                  "Specifically made for hands to help repair dry skin. Frequent washing and external factors like the environment can strip hands of vital elements needed to keep hands soft, smooth and hydrated. Advanced Repair Hand Cream leaves hands noticeably softer and smoother after just one application.",
+                img: {
+                  src: "%URL%assets/2.png",
+                  alt: "Call to action",
+                },
+              },
+            ],
           },
           {
-            text: "85%",
-            content: "Moisture Increase",
+            percent: "85%",
+            desc: "Moisture Increase",
+            group_inner: [
+              {
+                name: "Advanced repair Hom’s hand cream",
+                intro:
+                  "Specifically made for hands to help repair dry skin. Frequent washing and external factors like the environment can strip hands of vital elements needed to keep hands soft, smooth and hydrated. Advanced Repair Hand Cream leaves hands noticeably softer and smoother after just one application.",
+                img: {
+                  src: "%URL%assets/1.png",
+                  alt: "Call to action",
+                },
+              },
+            ],
           },
           {
-            text: "20%",
-            content: "Shea butter",
+            percent: "20%",
+            desc: "Shea butter",
+            group_inner: [
+              {
+                name: "Advanced repair Hom’s hand cream",
+                intro:
+                  "Specifically made for hands to help repair dry skin. Frequent washing and external factors like the environment can strip hands of vital elements needed to keep hands soft, smooth and hydrated. Advanced Repair Hand Cream leaves hands noticeably softer and smoother after just one application.",
+                img: {
+                  src: "%URL%assets/2.png",
+                  alt: "Call to action",
+                },
+              },
+            ],
           },
         ],
         options: {
@@ -166,25 +186,39 @@
         },
         params: [
           {
-            name: "text",
+            name: "percent",
             type: "text",
-            label: "Heading",
+            label: "Percent",
           },
           {
-            name: "content",
-            type: "textarea",
-            label: "Content",
+            name: "desc",
+            type: "text",
+            label: "Description",
+          },
+          {
+            name: "group_inner",
+            type: "group",
+            label: "Child group",
+            params: [
+              {
+                name: "name",
+                type: "text",
+                label: "Name",
+              },
+              {
+                name: "intro",
+                type: "textarea",
+                label: "Intro",
+              },
+              {
+                name: "img",
+                label: "Image",
+                type: "single_image",
+                description: "Recommend Size : 570x406px",
+              },
+            ],
           },
         ],
-      },
-      {
-        type: "single_image",
-        name: "img3",
-        label: "Image Change",
-        value: {
-          src: "%URL%assets/2.png",
-        },
-        description: "Recommend Size : 457 x 550px",
       },
     ],
   },
