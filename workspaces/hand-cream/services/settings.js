@@ -214,7 +214,7 @@
                 name: "img",
                 label: "Image",
                 type: "single_image",
-                description: "Recommend Size : 570x406px",
+                description: "Recommend Size : 457 x 550px",
               },
             ],
           },

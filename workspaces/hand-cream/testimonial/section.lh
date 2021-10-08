@@ -1,0 +1,398 @@
+@schema
+{
+    "name": "Testimonial",
+    "author": "LayoutHub Team",
+    "website": "https:\/\/www.LayoutHub.com",
+    "version": "1.0",
+    "category": "Testimonials",
+    "platform": "shopify",
+    "vendors": [
+        "css_swiper_slider",
+        "js_swiper_slider",
+        "css_layouthub_base"
+    ],
+    "configs": {
+        "desktop": {
+            "background": {
+                "color": "#8876E4",
+                "image": "",
+                "position": "center center",
+                "repeat": "no-repeat",
+                "size": "cover"
+            },
+            "section_box": {
+                "padding": {
+                    "top": "100px",
+                    "bottom": "100px"
+                }
+            }
+        },
+        "tablet": {
+            "section_box": {
+                "padding": {
+                    "top": "80px",
+                    "bottom": "80px"
+                }
+            }
+        },
+        "mobile": {
+            "section_box": {
+                "padding": {
+                    "top": "80px",
+                    "bottom": "80px"
+                }
+            }
+        }
+    }
+}
+ @endschema
+
+<template>
+    <div :class="'wrap-slider ' + lh_hidden">
+        <div  class="lh-do-food">
+            <div class="lh-container">
+                <div class="lh-list">
+                    <h2 v-html="lang(settings.title)" class="lh-list-title"></h2>
+                    <div v-html="lang(settings.desc)" class="lh-list-desc"></div>
+                </div>
+                <div  class="lh-t-h" >
+                    <div class="swiper-container slider">
+                        <div class="swiper-wrapper">
+                            <div v-for="(e, index) in settings.group_1" :key="index" class="swiper-slide">
+                                <div class="lh-flank">
+                                    <div class="lh-flank-image">
+                                        <div class="lh-flank-img" v-html="lang(e.img)"></div>
+                                    </div>
+                                    <div v-html="lang(e.name)" class="lh-food-name"></div>
+                                    <div v-html="lang(e.desc)" class="lh-food-desc"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Add Pagination -->
+
+                    </div>
+                    <div class=" lh-dot"></div>
+                    <!-- Add Arrows -->
+                </div>
+            </div>
+        </div>
+        <div class="lh-navi">
+            <div class="swiper-bt-prev lni lni-arrow-left lh-nav"></div>
+            <div class="swiper-bt-next lni lni-arrow-right lh-nav"></div>
+        </div>
+         <div class="swiper-pagination lh-dot"></div>
+    </div>
+</template>
+<script>
+    export default {
+        computed: {
+            lh_hidden() {
+                return (this.settings.navigation == 'no' ? 'lh-nav-none ' : '') + (this.settings.paginate == 'no' ? ' lh-dot-none' : '')
+            },
+        }
+    }
+</script>
+<style lang="scss">
+.swiper-wrapper {
+    height: auto;
+}
+.lh-t-h {
+    height: auto;
+    position : relative;
+}
+.lh-food-rating {
+    color: #E9C509;
+}
+.lh-food-rating span {
+    font-size: 15px;
+    display: inline-block;
+    margin-right: 11px;
+}
+.lh-food-rating span:last-child {
+    margin-right: 0px;
+}
+.lh-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.lh-flank-img{
+    max-width: 120px;
+    border-radius: 50%;
+}
+.lh-flank-img img{
+    border-radius: inherit;
+    width: 100%;
+}
+.lh-list-title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 44px;
+    line-height: 58px;
+    text-align: center;
+    color: #fff;
+    width: 50%;
+    margin-bottom: 24px;
+}
+.lh-list-desc {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #fff;
+    opacity: 0.6;
+    margin-bottom: 60px;
+    max-width: 570px;
+}
+.lh-dot-none{
+    .lh-dot{
+        display:none;
+    }
+}
+.lh-nav-none{
+    .lh-nav{
+        display:none
+    }
+}
+.swiper-slide:hover .item-infor{
+    box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.08);
+}
+.swiper-pagination{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 30px;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+.swiper-pagination-bullet{
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: #fff;
+}
+&>.swiper-pagination-bullet-active {
+    background: #251F42 !important;
+    width: 20px;
+    height : 10px;
+    font-size : 16px;
+    display: inline-flex;
+}
+}
+.lh-testimonials-2 {
+        background-color: #f8f8f8;
+    }
+    .lh-flank {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0px auto;
+        max-width : 700px;
+        justify-content: center;
+    }
+    .lh-testimonials-customer {
+        font-size: 14px;
+        line-height: 1.71;
+        letter-spacing: normal;
+        color: #666666;
+        margin-top: 4px;
+    }
+    .lh-food-position{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 28px;
+        text-align: center;
+        color: #626765;
+        width : 100%;
+        max-width : 310px;
+    }
+    .lh-food-desc{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 24px;
+        text-align: center;
+        color: #FFFFFF;
+        margin-top: 16px;
+        max-width : 300px;
+        width : 100%;
+    }
+    .lh-food-name {
+        max-width : 300px;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 24px;
+        color: #FFFFFF;
+        text-align: center;
+        margin-top: 30px;
+        width : 100%;
+    }
+    .lh-navi {
+        display: inline-flex;
+        grid-column-gap: 20px;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-top: 70px;
+    }
+    .swiper-bt-next {
+        font-size: 21px !important;
+        border: 1px solid #E5E5E6;
+        box-sizing: border-box;
+        border-radius: 50px;
+        color: #0A1715;
+        min-width: 60px;
+        min-height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .swiper-bt-prev {
+        font-size: 21px !important;
+        border: 1px solid #E5E5E6;
+        box-sizing: border-box;
+        border-radius: 50px;
+        color: #0A1715;
+        min-width: 60px;
+        min-height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .swiper-bt-next:hover , .swiper-bt-prev:hover {
+        background: #F9B047;
+        box-shadow: 2px 18px 30px rgba(249, 176, 71, 0.4);
+        border-radius: 50px;
+        color : #292D32;
+    }
+    .swiper-button-disabled {
+        color: #ABB5BD;
+    }
+    .lh-product-form__cart-img {
+        margin-top: 20px;
+    }
+/* tablet */
+@media screen and (max-width: 991px) {
+    .wrap-content-col {
+        &>h2 {
+            margin-bottom: 36px;
+            font-size: 1.8rem;
+        }
+
+        & .siler-item {
+            position: relative;
+
+            & .item-infor {
+                left: 10.8%;
+                top: 86%;
+                width: 78.4%;
+                padding: 10px 20px 10px 20px;
+
+                &>h2 {
+                    font-size: 18px;
+                }
+
+                &>p {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+    .swiper-pagination{
+        padding-top: 20px;
+        flex-wrap: wrap;
+        width: 100%;
+    .swiper-pagination-bullet{
+        width: 10px;
+        height: 10px;
+        margin: 0 8px 5px 0px;
+    }
+    &>.swiper-pagination-bullet-active {
+        opacity:1;
+    }
+}
+    .swiper-pagination {
+        padding-top: 20px;
+    }
+    .lh-list {
+        padding: 0px;
+    }
+}
+/* mobile */
+@media only screen and (max-width: 480px) {
+    .lh-list-desc {
+        margin: 24px 0px 50px;
+    }
+    .lh-navi {
+        margin-top : 40px;
+    }
+    .lh-list-title {
+        font-size: 1.75rem;
+        line-height: 38px;
+        padding : 0px;
+    }
+}
+
+</style>
+
+
+@javascript
+let auto = false;
+let loop = false;
+let	time = settings.timeout;
+if(time.indexOf('s')  != -1){
+  var time_out = time.replace('s', '');
+  time_out = time_out*1000;
+}
+if(settings.loop == 'yes'){
+  loop = true
+}
+if(settings.auto == 'yes'){
+  auto = {
+    delay:time_out
+  }
+}
+var $this = jQuery(this);
+function initSlides(){
+var swiper = new Swiper($this.find('.slider')[0], {
+    loop:loop,
+    autoplay:auto,
+    heightAuto: true,
+    navigation: {
+      nextEl: $this.find('.swiper-bt-next')[0],
+      prevEl: $this.find('.swiper-bt-prev')[0]
+    },
+    pagination: {
+        el: $this.find('.swiper-pagination')[0],
+        clickable: true,
+    }
+    ,
+    breakpoints: {
+        480: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        },
+        767: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        992: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        }
+      }
+  });
+};
+
+if(window.Swiper && settings.group_1.length){
+  initSlides();
+}
+@endjavascript

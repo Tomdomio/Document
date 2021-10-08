@@ -214,7 +214,7 @@ export default {
         align-items: center;
         gap: 0 3px;
         &-avt{
-            max-width: 60px;
+            min-width: 60px;
             border-radius: 50%;
             & img{
                 border-radius: inherit;
@@ -222,6 +222,7 @@ export default {
         }
         &-property{
             text-align: left;
+            max-width: 159px;
             &-name{
                 font-family: "DM Sans";
                 font-style: normal;
@@ -232,6 +233,7 @@ export default {
                 margin-bottom: 8px;
                 letter-spacing: 0.11;
                 margin-left: 11px;
+                max-width: 159px;
             }
             &-live{
                 font-size: 12px;
