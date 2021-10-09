@@ -55,7 +55,7 @@
                     <h2 v-html="lang(settings.title)" class="lh-list-title"></h2>
                     <div v-html="lang(settings.desc)" class="lh-list-desc"></div>
                 </div>
-                <div  class="lh-t-h" >
+                <div class="lh-t-h">
                     <div class="swiper-container slider">
                         <div class="swiper-wrapper">
                             <div v-for="(e, index) in settings.group_1" :key="index" class="swiper-slide">
