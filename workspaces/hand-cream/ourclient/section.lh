@@ -1,0 +1,74 @@
+@schema
+{
+    "name": "Our Client",
+    "author": "LayoutHub Team",
+    "website": "https:\/\/www.LayoutHub.com",
+    "version": "1.0",
+    "category": "Testimonials",
+    "platform": "shopify",
+    "vendors": [
+        "css_line_icon",
+        "css_layouthub_base",
+        "css_swiper_slider"
+    ],
+    "configs": {
+        "desktop": {
+            "background": {
+                "color": "#8876E4",
+                "image": "",
+                "position": "center center",
+                "repeat": "no-repeat",
+                "size": "cover"
+            },
+            "section_box": {
+                "padding": {
+                    "top": "80px",
+                    "bottom": "80px"
+                }
+            }
+        },
+        "tablet": {
+            "section_box": {
+                "padding": {
+                    "top": "80px",
+                    "bottom": "80px"
+                }
+            }
+        },
+        "mobile": {
+            "section_box": {
+                "padding": {
+                    "top": "60px",
+                    "bottom": "60px"
+                }
+            }
+        }
+    }
+}
+ @endschema
+
+<template>
+	<div class="lh-wrapper">
+        <div class="lh-container">
+            <div class="lh-row lh-items-center">
+                <div class="lh-col-md-4" v-for="(you, i) in settings.group_1" :key="i">
+                    <div class="lh__concept lh-row">
+                        <div class="lh__concept-image lh-col-md-3" v-html="lang(you.img)"></div>
+                        <div class="lh__concept-concept lh-col-md-9" v-html="lang(you.text)"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+<style lang="scss">
+.lh-items-center .lh-row{
+    align-items: center;
+}
+.lh__concept-concept{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #fff;
+}
+</style>

@@ -9,7 +9,7 @@
   "author": "LayoutHub Team",
   "website": "https://www.LayoutHub.com",
   "version": "1.0",
-  "sections": ["header", "services", "testimonial"],
+  "sections": ["header", "services", "testimonial", "testimonial2", "ourclient"],
   "theme": {
     "font_family": "DM Sans",
     "title_font_family": "Playfair Display",
