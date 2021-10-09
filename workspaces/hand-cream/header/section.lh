@@ -166,7 +166,9 @@
 @media (max-width: 480px){
     .lh__text{
         &-heading{
-            font-size: 38px;
+            font-size: 40px;
+            line-height: 52px;
+            letter-spacing: -0.9;
         }
         &-content{
             margin-bottom: 35px;

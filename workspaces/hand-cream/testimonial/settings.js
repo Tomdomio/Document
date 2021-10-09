@@ -52,13 +52,13 @@
         name: "paginate",
         label: "Pagination",
         type: "toggle",
-        value: "no",
+        value: "yes",
       },
       {
         name: "navigation",
         label: "Navigation",
         type: "toggle",
-        value: "yes",
+        value: "no",
       },
       {
         name: "group_1",

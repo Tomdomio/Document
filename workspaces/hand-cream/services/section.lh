@@ -222,7 +222,7 @@ export default {
         }
         &-property{
             text-align: left;
-            max-width: 159px;
+            max-width: 180px;
             &-name{
                 font-family: "DM Sans";
                 font-style: normal;
@@ -291,6 +291,9 @@ export default {
     top: 0;
     width: 85%;
     height: 2px;
+}
+.lh-image-img{
+    margin-left: 70px;
 }
 .lh-tab{
     margin-top: -5px;
@@ -361,6 +364,9 @@ export default {
             padding-left: 93px;
 
         }
+    }
+    .lh-image-img{
+        margin-left: 0;
     }
 }
 @media screen and (max-width: 480px){

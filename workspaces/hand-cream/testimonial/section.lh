@@ -106,6 +106,7 @@
 .lh-food-rating span {
     font-size: 15px;
     display: inline-block;
+    margin-bottom: 140px;
     margin-right: 11px;
 }
 .lh-food-rating span:last-child {
@@ -142,6 +143,7 @@
     line-height: 24px;
     text-align: center;
     color: #fff;
+    letter-spacing: 0;
     opacity: 0.6;
     margin-bottom: 60px;
     max-width: 570px;
@@ -163,7 +165,7 @@
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    padding-top: 30px;
+    padding-top: 60px;
     align-items: center;
     font-size: 18px;
     font-weight: 500;
@@ -179,8 +181,9 @@
 }
 &>.swiper-pagination-bullet-active {
     background: #251F42 !important;
-    width: 20px;
+    width: 24px;
     height : 10px;
+    border-radius: 16px;
     font-size : 16px;
     display: inline-flex;
 }
@@ -220,8 +223,9 @@
         line-height: 24px;
         text-align: center;
         color: #FFFFFF;
-        margin-top: 16px;
+        margin-top: 14px;
         max-width : 300px;
+        letter-spacing: 0;
         width : 100%;
     }
     .lh-food-name {
@@ -232,7 +236,7 @@
         line-height: 24px;
         color: #FFFFFF;
         text-align: center;
-        margin-top: 30px;
+        margin-top: 33px;
         width : 100%;
     }
     .lh-navi {
@@ -241,7 +245,7 @@
         justify-content: center;
         align-items: center;
         width: 100%;
-        margin-top: 70px;
+        margin-top: 80px;
     }
     .swiper-bt-next {
         font-size: 21px !important;
@@ -279,6 +283,9 @@
     .lh-product-form__cart-img {
         margin-top: 20px;
     }
+    .lh-list-title{
+        width: 65%;
+    }
 /* tablet */
 @media screen and (max-width: 991px) {
     .wrap-content-col {
@@ -311,8 +318,6 @@
         flex-wrap: wrap;
         width: 100%;
     .swiper-pagination-bullet{
-        width: 10px;
-        height: 10px;
         margin: 0 8px 5px 0px;
     }
     &>.swiper-pagination-bullet-active {
@@ -329,15 +334,17 @@
 /* mobile */
 @media only screen and (max-width: 480px) {
     .lh-list-desc {
-        margin: 24px 0px 50px;
+        margin-bottom: 140px;
     }
     .lh-navi {
         margin-top : 40px;
     }
     .lh-list-title {
-        font-size: 1.75rem;
-        line-height: 38px;
+        font-size: 32px;
+        line-height: 48px;
         padding : 0px;
+        width: 100%;
+        margin-bottom: 24px;
     }
 }
 
