@@ -379,6 +379,7 @@ export default {
             &--heading{
                 font-size: 32px;
                 line-height: 48px;
+                letter-spacing: -0.3;
             }
         }
         &-image{

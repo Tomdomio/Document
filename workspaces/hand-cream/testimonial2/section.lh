@@ -30,16 +30,16 @@
         "tablet": {
             "section_box": {
                 "padding": {
-                    "top": "60px",
-                    "bottom": "60px"
+                    "top": "100px",
+                    "bottom": "80px"
                 }
             }
         },
         "mobile": {
             "section_box": {
                 "padding": {
-                    "top": "60px",
-                    "bottom": "60px"
+                    "top": "100px",
+                    "bottom": "80px"
                 }
             }
         }
@@ -75,7 +75,6 @@
                             </div>
                         </div>
                         <!-- Add Pagination -->
-
                     </div>
                     <div class=" lh-dot"></div>
                     <!-- Add Arrows -->
@@ -117,7 +116,7 @@
     border-radius: 30px;
 }
 .lh-food-rating span {
-    font-size: 14px;
+    font-size: 11px;
     display: inline-block;
     margin-right: 3.33px;
 }
@@ -185,7 +184,6 @@
     align-items: center;
     font-size: 18px;
     font-weight: 500;
-    margin-bottom: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -197,7 +195,7 @@
 }
 &>.swiper-pagination-bullet-active {
     background: #7260CD !important;
-    width: 20px;
+    width: 24px;
     border-radius: 16px;
     height : 10px;
     display: inline-flex;
@@ -227,10 +225,10 @@
         font-weight: 500;
         font-size: 16px;
         line-height: 24px;
-        letter-spacing: 0.1;
+        letter-spacing: 0;
         text-align: center;
         color: #fff;
-        margin-bottom: 30px;
+        margin-bottom: 32px;
         max-width : 500px;
         width : 100%;
     }
@@ -240,8 +238,9 @@
         font-size: 14px;
         line-height: 24px;
         text-align: center;
+        letter-spacing: -0.3;
         color: #fff;
-        margin-top: 30px;
+        margin-top: 18px;
         width : 100%;
     }
     .lh-navi {
@@ -250,7 +249,7 @@
         justify-content: center;
         align-items: center;
         width: 100%;
-        margin-top: 70px;
+        margin-top: 31px;
     }
     .swiper-bt-next {
         font-size: 21px !important;
@@ -347,6 +346,9 @@
         font-size: 1.75rem;
         line-height: 38px;
         padding : 0px;
+    }
+    .lh-food-desc{
+        max-width: 315px;
     }
 }
 

@@ -1,0 +1,457 @@
+@schema
+{
+    "name": "Single Product",
+    "author": "Layouthub Team",
+    "website": "https://www.layouthub.com",
+    "version": "2.0",
+    "category": "Product single",
+    "platform": "shopify",
+    "vendors": ["js_swiper_slider","css_swiper_slider","css_layouthub_base","js_option_selections","js_jquery_zoom", "js_jquery_countdown","css_line_icon"],
+    "configs": {
+        "desktop":{
+            "background":{
+		        "color": "#251F42",
+                "image": "",
+                "position": "center center",
+                "repeat": "no-repeat",
+                "size": "cover"
+            },
+            "section_box":{
+                "padding":{
+                    "top":"100px",
+                    "bottom":"158px"
+                }
+            }
+        },
+        "tablet":{
+            "section_box":{
+                "padding":{
+                    "top":"80px",
+                    "bottom":"80px"
+                }
+            }
+        },
+       "mobile":{
+            "section_box":{
+                "padding":{
+                    "top":"80px",
+                    "bottom":"70px"
+                }
+            }
+        }
+    }
+}
+@endschema
+
+<template>
+    <div class="lh-wrapper lh-product-single lh-container">
+        <Liquid name="assign_product" />
+        <div class="lh-row lh-flex-direction">
+            <div class="lh-col-md-7 lh-product-single__media-group">
+                <ProductMedia />
+            </div>
+            <div class="lh-col-md-1"></div>
+            <div class="lh-col-md-5 lh-product-single__form-group">
+                <div class="lh-product-single__meta">
+                    <h1 class="lh-product-single__title" v-html="liquid('title')"></h1>
+                    <div class="lh-form-rating">
+                        <div v-if="settings.use_rating === 'yes'" v-html="liquid('rating')"></div>
+                        <div class="lh-fake-rating lh-tooltip" v-if="settings.use_rating === 'yes'" style="display: none" data-value="This is demo ratings. The real ratings will show when publish">
+                            <div>
+                                <ul class="lh-rating-stars">
+                                    <li><i class="lni lni-star-filled"></i></li>
+                                    <li><i class="lni lni-star-filled"></i></li>
+                                    <li><i class="lni lni-star-filled"></i></li>
+                                    <li><i class="lni lni-star-filled"></i></li>
+                                    <li><i class="lni lni-star-filled"></i></li>
+                                </ul>
+                            </div>
+                            <p class="lh-review-rating" v-html="settings.review_rating"></p>
+                        </div>
+                    </div>
+                    <p class="lh-review-text" v-html="settings.review_text_rating"></p>
+                </div>
+                <div class="lh-product-single__price" v-html="liquid('prices')"></div>
+                <div class="lh-product-single__custom-html lh-custom-html-below-price" v-html="settings.html_b_price"></div>
+                <ProductCountdown v-if="settings.use_countdown === 'yes'" />
+                <div class="lh-product-single__review">
+                    <div v-if="settings.enable_outstok == 'yes'" class="lh-product-status" :data-sale="lang(settings.trans_sale)" :data-out-stock="lang(settings.trans_outstock)" :data-unavailable="lang(settings.trans_unavai)"></div>
+                    <ProductForm />
+                    <ProductSocial v-if="section.settings.show_social === 'yes'" />
+                </div>
+            </div>
+        </div>
+        <div class="lh-row">
+            <div class="lh-col-md-12">
+                <div style="padding-top: 30px" class="lh-product-tab" :class="lh_hiden_tab">
+                    <ProductTabs />
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+
+<script>
+    export default {
+        computed: {
+                lh_hiden_tab(){
+                    return (this.settings.hide_product_tab == 'no' ? 'lh-product-tab-none' : '')
+                }
+            },
+        watch:{
+            'settings.enable_outstok': function(e){
+                this._.render();
+            }
+        }
+    }
+</script>
+
+
+
+<style lang="scss">
+    .lh-product-single__custom-html {
+        margin : 10px 0px;
+    }
+    .lh-price-form{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-bottom: 24px;
+    }
+    .lh-product-tab-none.lh-product-tab{
+        display: none;
+    }
+
+    .lh-tooltip {
+        position: relative;
+        }
+        .lh-tooltip:hover:after{
+            display: -webkit-flex;
+            display: flex;
+            -webkit-justify-content: center;
+            justify-content: center;
+            background: #444;
+            border-radius: 8px;
+            color: #fff;
+            content: attr(data-value);
+            font-size: 16px;
+            padding: 10px 15px;
+            position: absolute;
+            bottom: 113%;
+            left: 30%;
+            z-index: 99;
+        }
+        .lh-tooltip:hover:before{
+            border: solid;
+            border-color: #444 transparent;
+            border-width: 12px 6px 0 6px;
+            content: "";
+            left: 40%;
+            bottom: 100%;
+            position: absolute;
+            z-index: 99;
+        }
+
+
+
+        /*custom CSS*/
+
+        .lh-heading{
+           font-style: normal;
+            font-weight: normal;
+            font-size: 2.25rem;
+            line-height: 48px;
+            text-align: center;
+            color: var(--lh-color);
+            max-width : 570px;
+            margin : 0px auto;
+        }
+        .lh-desc {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 24px;
+            text-align: center;
+            color: #596D7F;
+            max-width : 570px;
+            margin : 24px auto 64px;
+        }
+        .lh-product-single__title{
+            color: #fff;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 44px;
+            line-height: 58px;
+            margin-bottom: 24px;
+        }
+        /*star*/
+        .lh-form-rating{
+            display: flex;
+            align-items: center;
+            // margin-bottom: 24px;
+        }
+        .spr-starrating {
+            display: inline-block;
+            color: #EFCF46 !important;
+            font-size: 20px !important;
+            margin-right: 10px;
+        }
+        .lh-fake-rating {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .lh-fake-rating.lh-tooltip:hover::after{
+            width: 400px;
+        }
+        .lh-fake-rating .lh-rating-stars {
+            margin-right: 10px;
+            li{
+                display:inline-block;
+                color: #EFCF46;
+                font-size: 20px !important;
+                margin-right: 10px;
+            }
+        }
+        .lh-review-rating{
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 24px;
+            color: #596D7F;
+            strong {
+                color: #011627;
+            }
+        }
+        .lh-review-text{
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 24px;
+            color: #fff;
+            opacity: 0.6;
+        }
+
+        /*price*/
+
+        .lh-product-single__price{
+            margin-top: 30px;
+        }
+        .lh-product-price__container {
+            display: flex;
+            align-items: center;
+
+            .lh-price{
+                font-family: "Playfair Display";
+                font-style: normal;
+                font-weight: bold;
+                font-size: 44px;
+                line-height: 59px;
+                color: #FFFFFF;
+                margin-right: 16px;
+                text-decoration: none;
+            }
+            .lh-compare-at-price{
+                font-family: "Playfair Display";
+                font-style: normal;
+                font-weight: bold;
+                font-size: 30px;
+                line-height: 40px;
+                opacity: 0.5;
+                text-decoration-line: line-through;
+                color: #FFFFFF;
+            }
+        }
+
+
+        /*countdown*/
+        .lh-single-product__countdown{
+            margin-top: 30px;
+        }
+
+
+        /*reviewform*/
+        .lh-product-single__review{
+            margin-top: 40px;
+        }
+        .select-size{
+            margin-bottom: 24px;
+        }
+        .lh-product-status  {
+             margin: 10px 0px;
+            span{
+                font-size : 20px;
+                color : red;
+                text-align: left;
+                font-weight: bold;
+            }
+        }
+        .lh-product-unavailable{
+            color: red;
+            font-size: 20px;
+        }
+        .lh-sold-out-text{
+            color: #5a5a5a;
+            font-size: 1rem;
+        }
+        .lh-sale-text{
+            color: var(--lh-color);
+            font-size: 1rem;
+        }
+        .media-video{
+            width: 100%;
+        }
+        .lh-product-stl{
+            position: absolute;
+            top: 4%;
+            right: 13%;
+
+            .lh-sale-bg{
+                position: relative;
+            }
+            .lh-sale-bg::after{
+                content: '';
+                position: absolute;
+                top: 10px;
+                right: 10%;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background-color: #ffffff;
+            }
+            .lh-sale-text{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            .lh-sale-subheading{
+                font-style: normal;
+                font-weight: 500;
+                font-size: 1rem;
+                line-height: 20px;
+                /* or 125% */
+
+                text-align: center;
+
+                /* White/100% */
+
+                color: #FFFFFF;
+                max-width: 79px;
+            }
+            .lh-sale-heading{
+                font-style: normal;
+                font-weight: bold;
+                font-size: 1.7rem;
+                text-align: center;
+                color: #FFFFFF;
+                max-width: 80px;
+            }
+        }
+        .swiper-container{
+            padding: 0 15px;
+        }
+        // .lh-product-single .lh-row{
+        //     align-items: center;
+        //     // justify-content: space-between;
+        // }
+        .lh-product-single__form-group{
+            margin-top: 100px;
+        }
+        @media only screen and (max-width: 991px){
+            .lh-flex-direction{
+                display: flex;
+                flex-direction: column;
+            }
+            .lh-col-md-1 {
+                display : none;
+            }
+            .lh-product-single__form-group{
+                -ms-flex: 0 0 100%;
+                flex: 0 0 100%;
+                max-width: 100%;
+                padding-top: 48px;
+            }
+            .lh-product-single__media-group{
+                -ms-flex: 0 0 100%;
+                flex: 0 0 100%;
+                max-width: 100%;
+                padding: 0px 30px;
+            }
+            .lh-form-rating{
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .lh-fake-rating.lh-tooltip:hover::after {
+                width: 296px;
+                left: 0;
+            }
+            .lh-product-stl{
+                top: 3%;
+                right: 3%;
+            }
+            .lh-sale-bg img{
+                width: 90px;
+            }
+        }
+        @media only screen and (max-width: 480px){
+            .lh-heading{
+                font-size: 1.75rem;
+                line-height: 36px;
+            }
+            .lh-review-rating{
+                font-size: 16 !important;
+                line-height: 24px;
+            }
+            .lh-rating-stars{
+                margin-right: 5px;
+            }
+            .lh-product-single__price {
+                margin-top: 32px;
+            }
+            .lh-sale-subheading{
+                font-size: 0.75rem !important;
+                line-height: 16px !important;
+            }
+            .lh-sale-heading{
+                font-size: 1.2rem !important;
+            }
+            .lh-product-unavailable{
+                font-size: 1rem;
+            }
+            .lh-sold-out-text{
+                font-size: 1rem;
+            }
+            .lh-sale-text{
+                font-size: 1rem;
+            }
+            .lh-swatch-images .list-swatch-images .lh-swatch-item span img{
+                width: 50px;
+                height: 50px;
+            }
+            .lh-product-form__quantity input{
+                padding: 14px 24px !important;
+            }
+            /*countdown*/
+            .lh-single-product__countdown{
+                margin-top: 32px;
+            }
+            .lh-product-form__controls-group {
+                margin-top: 38px;
+            }
+        }
+</style>
+
+@javascript
+    var $this = jQuery(this);
+    if(window.LAYOUTHUB_LIVE && settings.use_rating === 'yes' )
+    {
+        $this.find('.lh-fake-rating').show();
+    }
+@endjavascript

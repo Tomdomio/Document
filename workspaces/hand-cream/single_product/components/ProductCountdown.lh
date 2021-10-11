@@ -1,0 +1,189 @@
+<template>
+    <div v-if="settings.use_countdown === 'yes'" class="lh-single-product__countdown" :data-trans-dd="settings.trans_label_dd" :data-trans-hh="settings.trans_label_hh" :data-trans-mm="settings.trans_label_mm" :data-trans-ss="settings.trans_label_ss">
+        <div class="lh-text-countdown" v-html="settings.textcountdown"></div>
+        <div class="lh-countdown" :data-countdown-from="settings.countdown_from">
+			<div class="lh-countdown-text"><p v-html="lang(settings.trans_countdown)"></p></div>
+            <div v-html="liquid('countdown')"></div>
+	    </div>
+        <div class="lh-progress-bar" v-if="settings.enable_progress_bar === 'yes'">
+            <div class="lh-progress-bar__text" v-html="settings.progress_bar_text"></div>
+            <div class="lh-progress-bar__time">
+                <div class="lh-progress-bar__timer"></div>
+            </div>
+        </div>
+    </div>
+</template>
+@javascript
+if(settings.use_countdown){}
+    var $this = jQuery(this),
+        $wrapper = $this.closest('.lh-product-single'),
+
+        $random = $this.find('.lh-random-countdown'),
+        prefix='lh-countdown-',
+        $countdown = $this.find('.lh-count_time'),
+        $progress_bar = $this.find('.lh-progress-bar__timer'),
+        $form = $wrapper.find('.lh-product-single__form'),
+        product_id = $form.attr('data-id'),
+        key = prefix+product_id,
+        regex_digit = new RegExp(/^-?\d*\.?\d*$/),
+        time = $countdown.html(),
+        int_time = regex_digit.test(time);
+
+        function createNewDateLoop(){
+            var d = window.localStorage.getItem(key);
+            if (!Date.parse(d) || Date.parse(d) < new Date().getTime()){
+                d = new Date();
+                d.setSeconds(d.getSeconds()+ parseInt($countdown.attr('data-loop-time')));
+                window.localStorage.setItem(key,d);
+            }
+        }
+
+        if($countdown.hasClass('lh-random-countdown'))
+        {
+
+            if(product_id)
+            {
+                var d = window.localStorage.getItem(key);
+                if (!Date.parse(d) || Date.parse(d) < new Date().getTime()){
+                    d = new Date();
+                    d.setDate(d.getDate()+ (Math.floor(Math.random() * 14) + 1));
+                    window.localStorage.setItem(key,d);
+                }
+                $countdown.html(typeof d == 'string' ? d : d.toISOString());
+            }
+        }else{
+            if(int_time){
+                $countdown.attr('data-loop-time',time);
+                if(window.LAYOUTHUB_LIVE)
+                    window.localStorage.setItem(key,'');
+                createNewDateLoop();
+                $countdown.html(window.localStorage.getItem(key));
+            }
+        }
+        let data = $this.data();
+        data = Object.assign({
+            transDd:  settings.trans_label_dd,
+            transHh: settings.trans_label_hh,
+            transMm: settings.trans_label_mm,
+            transSs: settings.trans_label_ss
+        },data)
+        var countdown_trans = {
+            with_labels: true,
+            with_separators: true,
+            separator_days: ":",
+            css_class: 'lh-countdown-timer',
+            label_dd: data.transDd,
+            label_hh: data.transHh,
+            label_mm: data.transMm,
+            label_ss: data.transSs,
+        };
+
+        time  = $this.find('.lh-count_time').html();
+        time
+        jQuery.fn.countDown &&  $this.find('.lh-count_time').countDown(countdown_trans);
+        let time_start = $this.find('.lh-count_time_from').html();
+        try{
+            time_start = new Date(time_start).getTime();
+        }catch(e){
+            time_start = 0;
+        }
+        $this.find('.lh-count_time').on('time.elapsed',function(ev, ms){
+
+            if(int_time){
+                setTimeout(function(){
+                    createNewDateLoop();
+                },1000);
+            }
+            $wrapper.find('.lh-single-product__countdown').html('<div class="lh-expired" data-estyle="cd_text_expire">'+  settings.cd_text_expire +'</div>');
+        }).on('time.tick', function (ev, ms) {
+            if(settings.enable_progress_bar === 'yes' &&  time_start)
+            {
+               let end = $countdown.data('plugin_countDown').endDate;
+               let now = new Date().getTime();
+               let total = end - time_start;
+               let elapse = end-now;
+               if(total > 0)
+               {
+                   $progress_bar.show();
+                   let result = Math.round((total / elapse) * 100);
+                   result = result > 100 ? 100: result;
+                   $progress_bar.css('width',result + '%');
+               }
+               else
+                $progress_bar.hide();
+            }
+        });
+@endjavascript
+
+
+<style>
+    .lh-text-countdown{
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        color: #1E262D;
+        margin-bottom: 13px;
+    }
+    .lh-countdown-text{
+        display: flex;
+        align-items: center;
+        p{
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 24px;
+            color: #596D7F;
+            margin-right: 12px;
+        }
+    }
+    .lh-countdown{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .lh-countdown-timer{
+        display: block;
+        position: relative;
+        padding: 4px 10px;
+        background: #F71735;
+        .item{
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 24px;
+            color: #FFFFFF;
+        }
+        .separator{
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 24px;
+            color: #FFFFFF;
+            padding: 0 4px;
+        }
+    }
+    .lh-progress-bar{
+        display:block;
+        width: 100%;
+        margin-top: 15px;
+        .lh-progress-bar__time{
+            display:block;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 5px;
+            .lh-progress-bar__timer{
+                width:100%;
+                height:8px;
+                background: var(--lh-color);
+                border-radius: 5px;
+            }
+        }
+    }
+
+
+    @media only screen and (max-width: 991px){
+    }
+    @media only screen and (max-width: 480px){
+
+    }
+</style>
