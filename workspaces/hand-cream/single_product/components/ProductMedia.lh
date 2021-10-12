@@ -78,6 +78,19 @@
             bottom: -50px;
         }
     }
+    @media screen and (max-width: 480px){
+        .swiper-container{
+            margin-bottom: 40px;
+        }
+        .swiper-pagination{
+            left: 50%;
+            bottom: -10px;
+        }
+        .lh-product-single__form-group{
+            padding-top: 0;
+            margin-top: 60px;
+        }
+    }
 </style>
 
 
