@@ -176,6 +176,7 @@
     height: 10px;
     margin: 0 5px;
     background-color: #fff;
+    opacity: unset;
 }
 &>.swiper-pagination-bullet-active {
     background: #251F42 !important;
@@ -282,7 +283,7 @@
         margin-top: 20px;
     }
     .lh-list-title{
-        width: 50%;
+        max-width: 50%;
     }
 /* tablet */
 @media screen and (max-width: 991px) {
@@ -310,6 +311,9 @@
                 }
             }
         }
+        .lh-list-title{
+            max-width: 65%;
+        }
     }
     .swiper-pagination{
         padding-top: 20px;
@@ -319,7 +323,7 @@
         margin: 0 8px 5px 0px;
     }
     &>.swiper-pagination-bullet-active {
-        opacity:1;
+        opacity:unset
     }
 }
     .swiper-pagination {

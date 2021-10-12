@@ -182,6 +182,7 @@ export default {
     box-sizing: border-box;
     border-radius: 10px;
     margin-right: 16px;
+    margin-bottom: 16px;
     width: 100px;
     height: 44px;
     display: flex;
@@ -222,7 +223,6 @@ export default {
         display: block;
         position: relative;
         margin-right: 20px;
-        margin-bottom: 24px;
     }
     input{
         -webkit-appearance: none;

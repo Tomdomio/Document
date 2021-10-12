@@ -1,6 +1,6 @@
 @schema
 {
-    "name": "Testimonials2",
+    "name": "Testimonial 2",
     "author": "LayoutHub",
     "website": "https:\/\/www.LayoutHub.com",
     "version": "1.0",
@@ -190,9 +190,10 @@
     align-items: center;
 .swiper-pagination-bullet{
     width: 10px;
-  height: 10px;
-  margin: 0 5px;
-  background-color: #DDD6FE;
+    height: 10px;
+    margin: 0 5px;
+    background-color: #DDD6FE;
+    opacity: unset;
 }
 &>.swiper-pagination-bullet-active {
     background: #7260CD !important;

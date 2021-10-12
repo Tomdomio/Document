@@ -48,8 +48,26 @@
         text-align: center;
         height: unset !important;
         margin-right: unset !important;
-        width: unset !important;
-        flex-shrink: unset;
+
+    }
+    .swiper-pagination{
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+     .swiper-pagination>.swiper-pagination-bullet-active{
+            background: #7260CD !important;
+            width: 24px;
+            height: 10px;
+            border-radius: 16px;
+            margin: 0 12px;
+     }
+    .swiper-pagination-bullet{
+            cursor: pointer;
+            width: 10px;
+            height: 10px;
+            background-color: #fff;
+            opacity: unset;
     }
     @media screen and (max-width: 991px){
         .swiper-container .swiper-wrapper{
@@ -83,7 +101,7 @@
             spaceBetween: 30,
             autoHeight: true,
             pagination: {
-                el: this.find('.swiper-pagination'),
+                el: $this.find('.swiper-pagination')[0],
                 clickable: true
             },
             navigation: {

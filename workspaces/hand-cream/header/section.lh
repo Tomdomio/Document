@@ -1,6 +1,6 @@
 @schema
 {
-    "name": "Header",
+    "name": "Call to action",
     "author": "LayoutHub Team",
     "website": "https:\/\/www.LayoutHub.com",
     "version": "1.0",
