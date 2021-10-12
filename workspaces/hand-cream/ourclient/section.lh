@@ -49,7 +49,7 @@
 
 <template>
 	<div class="lh-wrapper">
-        <div class="lh-container">
+        <div class="lh-container lh-gap">
             <div class="lh-row lh-items-center">
                 <div class="lh-col-md-4" v-for="(you, i) in settings.group_1" :key="i">
                     <div class="lh__concept lh-row">
@@ -82,7 +82,7 @@
         flex: 0 0 50%;
         max-width: 50%;
     }
-    .lh-items-center .lh-row{
+    .lh-gap .lh-row{
         gap: 30px 0;
     }
 }

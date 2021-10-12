@@ -51,6 +51,11 @@
         width: unset !important;
         flex-shrink: unset;
     }
+    @media screen and (max-width: 991px){
+        .swiper-container .swiper-wrapper{
+            justify-content: center;
+        }
+    }
 </style>
 
 
