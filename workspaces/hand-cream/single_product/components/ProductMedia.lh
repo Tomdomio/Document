@@ -76,13 +76,6 @@
         }
         .swiper-pagination{
             bottom: -50px;
-        }.lh-product-single_media-items .swiper-slide{
-            text-align: unset;
-        }
-    }
-    @media screen and (max-width: 480px){
-        .swiper-container .swiper-wrapper{
-            margin-left: 0;
         }
     }
 </style>
