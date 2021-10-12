@@ -38,7 +38,7 @@
         "mobile": {
             "section_box": {
                 "padding": {
-                    "top": "100px",
+                    "top": "80px",
                     "bottom": "80px"
                 }
             }
@@ -87,6 +87,7 @@
         </div>
          <div class="swiper-pagination lh-dot"></div>
     </div>
+
 </template>
 
 <script>
@@ -341,6 +342,9 @@
 @media only screen and (max-width: 480px) {
     .lh-list-desc {
         margin: 24px 0px 50px;
+    }
+    .lh-flank{
+        padding: 60px 0;
     }
     .lh-navi {
         margin-top : 40px;

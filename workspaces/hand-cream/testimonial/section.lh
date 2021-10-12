@@ -282,7 +282,7 @@
         margin-top: 20px;
     }
     .lh-list-title{
-        width: 48%;
+        width: 50%;
     }
 /* tablet */
 @media screen and (max-width: 991px) {

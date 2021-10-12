@@ -364,7 +364,12 @@ input[type=number]::-webkit-inner-spin-button {
         padding: 20px 32px;
     }
 }
-
+@media screen and (max-width: 480px){
+    .lh-swatch-simple .lh-swatch-item{
+        margin-right: 9px;
+        margin-bottom: 20px;
+    }
+}
 </style>
 
 

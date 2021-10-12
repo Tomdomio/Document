@@ -38,8 +38,8 @@
         "mobile": {
             "section_box": {
                 "padding": {
-                    "top": "60px",
-                    "bottom": "60px"
+                    "top": "80px",
+                    "bottom": "80px"
                 }
             }
         }
@@ -385,6 +385,9 @@ export default {
         &-image{
             padding-left: 15px;
         }
+    }
+    .padding{
+        padding: 62px 0 66 0;
     }
     .lh__text-heading{
         font-size: 38px;

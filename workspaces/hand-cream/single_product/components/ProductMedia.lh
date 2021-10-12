@@ -83,7 +83,7 @@
             spaceBetween: 30,
             autoHeight: true,
             pagination: {
-                el: ".swiper-pagination",
+                el: this.find('.swiper-pagination'),
                 clickable: true
             },
             navigation: {
