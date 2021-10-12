@@ -166,6 +166,7 @@ export default {
 .lh-swatch-simple .list-swatch-items{
     display: inline-flex;
     flex-wrap: wrap;
+    gap: 20px 0;
     align-items: center;
 }
 .lh-swatch-simple .lh-swatch-item span{
