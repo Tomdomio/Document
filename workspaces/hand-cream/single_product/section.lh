@@ -19,7 +19,7 @@
             "section_box":{
                 "padding":{
                     "top":"100px",
-                    "bottom":"160px"
+                    "bottom":"100px"
                 }
             }
         },
@@ -356,6 +356,7 @@
         }
         .swiper-container{
             padding: 0 15px;
+            margin-bottom: 88px;
         }
         // .lh-product-single .lh-row{
         //     align-items: center;

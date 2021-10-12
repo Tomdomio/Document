@@ -182,7 +182,6 @@ export default {
     box-sizing: border-box;
     border-radius: 10px;
     margin-right: 16px;
-    margin-bottom: 16px;
     width: 100px;
     height: 44px;
     display: flex;
@@ -322,7 +321,6 @@ input[type=number]::-webkit-inner-spin-button {
     font-weight: bold;
     margin-top: 0px;
     min-width: 270px;
-    margin-bottom: 15px;
     padding: 14px 0px;
 }
 .lh-product-form__cart-submit{
@@ -369,6 +367,22 @@ input[type=number]::-webkit-inner-spin-button {
         margin-right: 9px;
         margin-bottom: 20px;
     }
+    .lh-product-form__quantity .lh-quantity-minus{
+            left: 10px;
+        }
+        .lh-product-form__quantity .lh-quantity-plus{
+            right: 10px;
+        }
+        .lh-product-form__quantity input{
+            min-width: 133px;
+            margin-left: -10px;
+        }
+        .lh-external-link{
+            min-width: 195px;
+        }
+         .lh-product-form__quantity .lh-controls{
+            margin-right: 0;
+        }
 }
 </style>
 

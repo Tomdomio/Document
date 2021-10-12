@@ -311,9 +311,6 @@
                 }
             }
         }
-        .lh-list-title{
-            max-width: 65%;
-        }
     }
     .swiper-pagination{
         padding-top: 20px;
@@ -332,6 +329,9 @@
     .lh-list {
         padding: 0px;
     }
+    .lh-list-title{
+            max-width: 65%;
+        }
 }
 /* mobile */
 @media only screen and (max-width: 480px) {
@@ -347,6 +347,9 @@
         padding : 0px;
         width: 100%;
         margin-bottom: 24px;
+    }
+    .lh-list-title{
+        max-width: 100%;
     }
 }
 
