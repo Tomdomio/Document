@@ -60,13 +60,14 @@
             width: 24px;
             height: 10px;
             border-radius: 16px;
-            margin: 0 12px;
+            margin-right: 12px;
      }
     .swiper-pagination-bullet{
             cursor: pointer;
             width: 10px;
             height: 10px;
             background-color: #fff;
+            margin-right: 12px;
             opacity: unset;
     }
     @media screen and (max-width: 991px){
