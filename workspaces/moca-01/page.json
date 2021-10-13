@@ -1,0 +1,21 @@
+{
+  "name": "Moca 01",
+  "id": "52B1oznDHdeAW7fj",
+  "task_id": 687,
+  "platform": "shopify",
+  "complete": false,
+  "dev": "minhlh",
+  "category": "home",
+  "author": "LayoutHub Team",
+  "website": "https://www.LayoutHub.com",
+  "version": "1.0",
+  "sections": ["calltoaction", "newsletter"],
+  "theme": {
+    "font_family": "Montserrat",
+    "title_font_family": "Montserrat",
+    "color": "#bacdd9",
+    "font_size": "16"
+  },
+  "label": "Moca 01",
+  "action": "item"
+}

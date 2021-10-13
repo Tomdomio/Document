@@ -388,6 +388,9 @@ input[type=number]::-webkit-inner-spin-button {
          .lh-product-form__quantity .lh-controls{
             margin-right: 0;
         }
+        .lh-swatch-simple .list-swatch-items{
+            gap:unset;
+        }
 }
 </style>
 

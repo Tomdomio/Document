@@ -1,0 +1,64 @@
+@schema
+{
+    "name": "Newsletter",
+    "author": "LayoutHub Team",
+    "website": "https:\/\/www.LayoutHub.com",
+    "version": "1.0",
+    "category": "Testimonials",
+    "platform": "shopify",
+    "vendors": [
+        "css_line_icon",
+        "css_layouthub_base",
+        "css_swiper_slider"
+    ],
+    "configs": {
+        "desktop": {
+            "background": {
+                "color": "#fff",
+                "image": "",
+                "position": "center center",
+                "repeat": "no-repeat",
+                "size": "cover"
+            },
+            "section_box": {
+                "padding": {
+                    "top": "120px",
+                    "bottom": "120px"
+                }
+            }
+        },
+        "tablet": {
+            "section_box": {
+                "padding": {
+                    "top": "80px",
+                    "bottom": "80px"
+                }
+            }
+        },
+        "mobile": {
+            "section_box": {
+                "padding": {
+                    "top": "80px",
+                    "bottom": "80px"
+                }
+            }
+        }
+    }
+}
+ @endschema
+
+
+
+
+<template>
+	<div class="lh-wrapper wrapper">
+
+	</div>
+</template>
+<style lang="scss">
+.lh-wrapper{
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+</style>

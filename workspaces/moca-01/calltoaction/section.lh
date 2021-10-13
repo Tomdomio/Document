@@ -1,0 +1,179 @@
+@schema
+{
+    "name": "Call To Action",
+    "author": "LayoutHub Team",
+    "website": "https:\/\/www.LayoutHub.com",
+    "version": "1.0",
+    "category": "Testimonials",
+    "platform": "shopify",
+    "vendors": [
+        "css_line_icon",
+        "css_layouthub_base",
+        "css_swiper_slider"
+    ],
+    "configs": {
+        "desktop": {
+            "background": {
+                "color": "#fff",
+                "image": "",
+                "position": "center center",
+                "repeat": "no-repeat",
+                "size": "cover"
+            },
+            "section_box": {
+                "padding": {
+                    "top": "",
+                    "bottom": ""
+                }
+            }
+        },
+        "tablet": {
+            "section_box": {
+                "padding": {
+                    "top": "",
+                    "bottom": ""
+                }
+            }
+        },
+        "mobile": {
+            "section_box": {
+                "padding": {
+                    "top": "",
+                    "bottom": ""
+                }
+            }
+        }
+    }
+}
+ @endschema
+
+
+
+
+<template>
+	<div class="lh-wrapper wrapper">
+        <div class="lh-row row">
+            <div class="lh-row-image1 lh-col-md-6">
+                <div class="lh-row-image1-img1" v-html="lang(settings.img1)"></div>
+                <h1 class="lh-row-image1-title1" v-html="lang(settings.title1)"></h1>
+            </div>
+            <div class="lh-row-image2 lh-col-md-6">
+                <div class="lh-row-image2-img2" v-html="lang(settings.img2)"></div>
+                <div class="lh-row-image2-text">
+                    <h1 class="lh-row-image2-text-title2" v-html="lang(settings.title2)"></h1>
+                    <p class="lh-row-image2-text-desc" v-html="lang(settings.desc)"></p>
+                    <div class="lh-row-image2-text-button" v-html="lang(settings.cta)"></div>
+                </div>
+            </div>
+        </div>
+	</div>
+</template>
+<style lang="scss">
+.lh-wrapper{
+    max-width: 1920px;
+    margin: 0 auto;
+}
+.wrapper .lh-row{
+    margin-left: 0;
+    margin-right: 0;
+}
+.row .lh-col-md-6{
+    padding-left: 0;
+    padding-right: 0;
+}
+.lh-row-image1{
+    position: relative;
+    &-title1{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-weight: bold;
+        font-size: 60px;
+        line-height: 60px;
+        color: #000000;
+        z-index: 1;
+    }
+    &:hover img{
+        opacity: 0.4;
+        transition: all 0.3s linear;
+    }
+}
+.lh-row-image2{
+    position: relative;
+    &-text{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 375px;
+        width: 100%;
+        z-index: 1;
+        &-title2{
+            font-weight: bold;
+            font-size: 60px;
+            line-height: 60px;
+            text-align: center;
+            color: #000000;
+            margin-bottom: 16px;
+        }
+        &-desc{
+            font-size: 12px;
+            line-height: 24px;
+            text-align: center;
+            letter-spacing: 3.2px;
+            text-transform: uppercase;
+            color: #3F3F3F;
+            margin-bottom: 48px;
+        }
+        &-button{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: transparent;
+            max-width: 212px;
+            border: 1px solid #000;
+            margin: 0 auto;
+            & a{
+                padding: 16px 40px;
+                font-size: 12px;
+                line-height: 24px;
+                text-align: center;
+                width: 100%;
+                letter-spacing: 0.2em;
+                text-transform: uppercase;
+                color: #000000;
+                cursor: pointer;
+            }
+        }
+
+    }
+    &:hover img{
+        opacity: 0.4;
+        transition: all 0.3s linear;
+    }
+}
+@media screen and (max-width: 991px){
+    .wrapper .lh-row{
+        flex-direction: column;
+    }
+    .row .lh-col-md-6{
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .lh-row-image1-title1{
+        font-size: 36px;
+        line-height: 36px;
+    }
+    .lh-row-image2-text-title2{
+        font-size: 36px;
+        line-height: 36px;
+    }
+    .lh-row-image2-text-desc{
+        display: none;
+    }
+    .lh-row-image2-text-button{
+        display: none;
+    }
+}
+</style>
