@@ -188,8 +188,6 @@
         /*star*/
         .lh-form-rating{
             display: flex;
-            align-items: center;
-            // margin-bottom: 24px;
         }
         .spr-starrating {
             display: inline-block;
@@ -207,6 +205,7 @@
         }
         .lh-fake-rating .lh-rating-stars {
             margin-right: 10px;
+            margin-bottom: 24px;
             li{
                 display:inline-block;
                 color: #EFCF46;
@@ -218,6 +217,7 @@
             font-style: normal;
             font-weight: 600;
             font-size: 16px;
+            margin-bottom: 24px;
             line-height: 24px;
             color: #596D7F;
             strong {

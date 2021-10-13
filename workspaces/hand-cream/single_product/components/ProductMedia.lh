@@ -39,7 +39,7 @@
         box-sizing: border-box;
     }
     .lh-product-single__thumbnails{
-        margin-top: 24px;
+       margin: 0 0 88px 10px !important;
     }
     .lh-thumbnail-none.lh-product-single__thumbnails{
         display: none;

@@ -94,24 +94,43 @@ if(settings.use_countdown){}
                     createNewDateLoop();
                 },1000);
             }
-            $wrapper.find('.lh-single-product__countdown').html('<div class="lh-expired" data-estyle="cd_text_expire">'+  settings.cd_text_expire +'</div>');
+             $wrapper.find('.lh-single-product__countdown').html('<div class="lh-expired" data-estyle="cd_text_expire">'+  settings.cd_text_expire +'</div>');
         }).on('time.tick', function (ev, ms) {
             if(settings.enable_progress_bar === 'yes' &&  time_start)
             {
                let end = $countdown.data('plugin_countDown').endDate;
                let now = new Date().getTime();
                let total = end - time_start;
-               let elapse = end-now;
-               if(total > 0)
-               {
-                   $progress_bar.show();
-                   let result = Math.round((total / elapse) * 100);
-                   result = result > 100 ? 100: result;
-                   $progress_bar.css('width',result + '%');
+               let elapse = end - now;
+               let ran = Date.parse(d);
+               let random = ran - now;
+
+               if(settings.use_rand_countdown == 'yes'){
+                   if(random < 0)
+                    {
+                       $progress_bar.hide();
+                    }
+                    else {
+                        $progress_bar.show();
+                        let result = Math.round((random / elapse) * 100);
+                        result = result > 100 ? 100: result;
+                        $progress_bar.css('width',result + '%');
+                    }
+               }else{
+                   console.log(total,'total',elapse)
+                   if(total > 0)
+                    {
+                        $progress_bar.show();
+                        let result = Math.round((total / elapse) * 100);
+                        result = result > 100 ? 100: result;
+                        $progress_bar.css('width',result + '%');
+                    }
+                    else {
+                        $progress_bar.hide();
+                    }
                }
-               else
-                $progress_bar.hide();
             }
+
         });
 @endjavascript
 
@@ -122,7 +141,7 @@ if(settings.use_countdown){}
         font-weight: 500;
         font-size: 16px;
         line-height: 24px;
-        color: #1E262D;
+        color: #fff;
         margin-bottom: 13px;
     }
     .lh-countdown-text{
@@ -178,12 +197,5 @@ if(settings.use_countdown){}
                 border-radius: 5px;
             }
         }
-    }
-
-
-    @media only screen and (max-width: 991px){
-    }
-    @media only screen and (max-width: 480px){
-
     }
 </style>

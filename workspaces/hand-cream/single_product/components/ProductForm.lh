@@ -6,7 +6,7 @@
         <!--  {% endcomment %}-->
             <div class="lh-product-form__swatches" >
                 <div v-html="liquid('swatches')"></div>
-                <div v-show="settings.hidden_size == 'yes'" v-html="liquid('variant_selectors')"></div>
+                <div v-html="liquid('variant_selectors')"></div>
             </div>
             <div class="lh-product-form__variants">
                 <select class="lh-product-form__variants-select" name="id" :id="selectId" style="display: none" v-html="liquid('product_options')"></select>

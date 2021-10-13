@@ -73,50 +73,44 @@
   {
     tab_name: "Product form",
     settings: [
-      {
-        name: "main_swatch",
-        type: "text",
-        description:
-          'Choose your product option display as Swatch <a target="_blank" href="https://docs.layouthub.com/user-guides/featured-elements/product-page/general#3-set-swatch-layout">Learn more </a>',
-        label: "Select main swatch option",
-        value: "",
-        options: {
-          toolbar: false,
-        },
-      },
-      {
-        name: "swatch_image",
-        type: "toggle",
-        label: "Show the images as swatch?",
-        value: "no",
-        description: "By default app will display your product options as color which set in App Settings/ Swatch color settings",
-      },
-      {
-        name: "hidden_size",
-        type: "toggle",
-        label: "Show Size",
-        value: "yes",
-      },
-      {
-        type: "toggle",
-        name: "enable_outstok",
-        label: "Enable Outstock",
-        value: "no",
-      },
+      // {
+      //   name: "main_swatch",
+      //   type: "text",
+      //   description:
+      //     'Choose your product option display as Swatch <a target="_blank" href="https://docs.layouthub.com/user-guides/featured-elements/product-page/general#3-set-swatch-layout">Learn more </a>',
+      //   label: "Select main swatch option",
+      //   value: "",
+      //   options: {
+      //     toolbar: true,
+      //   },
+      // },
+      // {
+      //   name: "swatch_image",
+      //   type: "toggle",
+      //   label: "Show the images as swatch?",
+      //   value: "no",
+      //   description: "By default app will display your product options as color which set in App Settings/ Swatch color settings",
+      // },
+      // {
+      //   type: "toggle",
+      //   name: "enable_outstok",
+      //   label: "Enable Outstock",
+      //   value: "no",
+      // },
       {
         type: "toggle",
         name: "enable_quantity",
         label: "Enable quantity",
         value: "yes",
       },
-      {
-        type: "toggle",
-        name: "enable_payment_button",
-        value: "no",
-        label: "Show dynamic checkout button",
-        description:
-          'Each customer will see their preferred payment method from those available on your store, such as PayPal or Apple Pay. <a hred="https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout" target="_blank">Learn more</a>',
-      },
+      // {
+      //   type: "toggle",
+      //   name: "enable_payment_button",
+      //   value: "no",
+      //   label: "Show dynamic checkout button",
+      //   description:
+      //     'Each customer will see their preferred payment method from those available on your store, such as PayPal or Apple Pay. <a hred="https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout" target="_blank">Learn more</a>',
+      // },
       {
         type: "toggle",
         name: "enable_external",
@@ -470,7 +464,7 @@
       {
         type: "text",
         name: "trans_add_to_cart",
-        value: "ORDER NOW TODAY!",
+        value: "SHOP NOW!",
         label: "Add to cart text",
       },
       {
@@ -486,30 +480,30 @@
         value: "ORDER NOW TODAY!",
         name: "trans_external",
       },
-      {
-        type: "text",
-        label: "Out of stock",
-        name: "trans_outstock",
-        value: "Out of stock",
-      },
-      {
-        type: "text",
-        label: "Unavailable",
-        name: "trans_unavai",
-        value: "Unavailable",
-      },
-      {
-        type: "text",
-        label: "New product",
-        name: "trans_new",
-        value: "New",
-      },
-      {
-        type: "text",
-        label: "Sold out product",
-        name: "trans_sold_out",
-        value: "Sold out",
-      },
+      // {
+      //   type: "text",
+      //   label: "Out of stock",
+      //   name: "trans_outstock",
+      //   value: "Out of stock",
+      // },
+      // {
+      //   type: "text",
+      //   label: "Unavailable",
+      //   name: "trans_unavai",
+      //   value: "Unavailable",
+      // },
+      // {
+      //   type: "text",
+      //   label: "New product",
+      //   name: "trans_new",
+      //   value: "New",
+      // },
+      // {
+      //   type: "text",
+      //   label: "Sold out product",
+      //   name: "trans_sold_out",
+      //   value: "Sold out",
+      // },
       {
         type: "text",
         label: "Product sale",
