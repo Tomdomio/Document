@@ -1,6 +1,6 @@
 [
   {
-    tab_name: "General",
+    tab_name: "Heading",
     settings: [
       {
         name: "title",
@@ -129,9 +129,9 @@
       },
       {
         type: "text",
-        label: "Submit success",
+        label: "Subscribed success",
         name: "subscribed_success",
-        value: "Thanks for submit",
+        value: "Thanks for subscribed",
       },
       {
         name: "question",

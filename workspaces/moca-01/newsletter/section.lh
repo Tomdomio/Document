@@ -64,7 +64,7 @@
                     <span class="lh-contents-content_2" v-html="lang(settings.content_2)"></span>
                     <span class="lh-contents-content_3" v-html="lang(settings.content_3)"></span>
                 </div>
-                <div class=" lh-row lh-rows lh-col-md-8">
+                <div class=" lh-row lh-rows lh-col-md-12">
                     <div v-for="(item, index) in settings.group_1" :key="index" class="lh-vfor lh-col-md-5">
                         <div class="lh-row-bottom-list">
                             <div class="lh-row-bottom-list-text" v-if="item.type_icon === 'text'" v-html="item.text"></div>
@@ -259,6 +259,7 @@
     text-align: center;
     text-transform: uppercase;
     color: #000000;
+    cursor: pointer;
 }
 .lh-rowss__question{
     font-family: "Montserrat";
@@ -266,5 +267,29 @@
     line-height: 24px;
     color: #CCD6DD;
 }
+@media screen and (max-width: 480px){
 
+    .lh-row-top{
+        max-width: 335px;
+        margin-bottom: 72px;
+        &-title{
+            font-size: 16px;
+            line-height: 24px;
+            font-family: "Merriweather" !important;
+        }
+    }
+    .lh-row-top-desc::before{
+        left: 30%;
+    }
+    .lh-bottom .lh-col-md-6{
+        max-width:100%;
+        flex: 0 0 100%;
+    }
+    .lh-contents .lh-row{
+        flex-direction: row;
+    }
+    .lh-bottom-left{
+        margin-bottom: 40px;
+    }
+}
 </style>
