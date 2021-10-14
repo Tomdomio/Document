@@ -11,7 +11,7 @@
   "version": "1.0",
   "sections": ["calltoaction", "newsletter"],
   "theme": {
-    "font_family": "Montserrat",
+    "font_family": "Merriweather",
     "title_font_family": "Montserrat",
     "color": "#bacdd9",
     "font_size": "16"

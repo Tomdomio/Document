@@ -1,0 +1,39 @@
+{
+    "form": {
+        "raw" : <<EOF
+            {%- form 'customer' , class: 'lh-input-group' -%}
+
+            {%- if form.posted_successfully? -%}
+              <p class="note form-success">@lang(section.settings.subscribed_success)</p>
+            {%- else -%}
+             <input type="hidden" name="contact[tags]" value="newsletter">
+              <div class="lh-input-visible">
+              <input type="email" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="@attr(lang(section.settings.placeholder_text))" name="contact[email]"   class="lh-form-control lh-input-search" aria-label="@attr(lang(section.settings.placeholder_text))" required>
+              @if(section.settings.n_signup)
+              <div class="lh-input-group-append">
+                <hr class="lh-input__line_1">
+                 <button class="lh-btn lh-btn-outline" type="submit">
+                   @lang(section.settings.n_signup)
+                 </button>
+                 <hr class="lh-input__line_2">
+              </hr>
+              @endif
+              </div>
+
+      {{ form.errors | default_errors }}
+
+              {%- endif -%}
+        {% endform %}
+		EOF,
+        "content" : <<EOF
+            <form class="lh-input-group">
+        <input type="text" class="lh-form-control lh-input-search "  placeholder="Your email...">
+        <div class="lh-input-group-append">
+           <button class="lh-btn lh-btnn" type="SUBMIT">
+                <span class="arrow arrow-bar is-right hub-theme-color"></span>
+           </button>
+        </div>
+      </form>
+		EOF
+    }
+}

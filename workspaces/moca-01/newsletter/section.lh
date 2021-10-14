@@ -51,14 +51,220 @@
 
 
 <template>
-	<div class="lh-wrapper wrapper">
-
+	<div class="lh-wrapper lh-wrap">
+        <div class="lh-row-top">
+            <h4 v-html="lang(settings.title)" class="lh-row-top-title"></h4>
+            <div v-html="lang(settings.desc)" class="lh-row-top-desc"></div>
+        </div>
+        <div class="lh-row lh-bottom">
+            <div class="lh-bottom-left lh-col-md-6">
+                <div class="lh-contents">
+                    <p class="lh-contents-content_1" v-html="lang(settings.content_1)"></p>
+                    <hr class="lh-contents-line_1">
+                    <span class="lh-contents-content_2" v-html="lang(settings.content_2)"></span>
+                    <span class="lh-contents-content_3" v-html="lang(settings.content_3)"></span>
+                </div>
+                <div class=" lh-row lh-rows lh-col-md-8">
+                    <div v-for="(item, index) in settings.group_1" :key="index" class="lh-vfor lh-col-md-5">
+                        <div class="lh-row-bottom-list">
+                            <div class="lh-row-bottom-list-text" v-if="item.type_icon === 'text'" v-html="item.text"></div>
+                            <div class="lh-row-bottom-list-icon" v-if="item.type_icon === 'font'"><i :class="item.font_icon"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="lh-bottom-right lh-col-md-6">
+                <div class="lh-saleoff">
+                    <p class="lh-saleoff-contentt_1" v-html="lang(settings.contentt_1)"></p>
+                    <hr class="lh-contents-line_1">
+                </div>
+                <div class=" lh-row lh-rowss lh-col-md-12">
+                    <div class="lh-rowss__form" v-html=" liquid('form')"></div>
+                    <div class="lh-rowss__question" v-html="lang(settings.question)"></div>
+                </div>
+            </div>
+        </div>
 	</div>
 </template>
 <style lang="scss">
 .lh-wrapper{
     max-width: 1920px;
     margin: 0 auto;
+}
+.lh-row-top{
+    max-width: 600px;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 96px;
+    &-title{
+        font-family: "Merriweather";
+        font-style: italic;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 24px;
+        text-align: center;
+        color: #A8B0B6;
+        margin-bottom: 16px;
+    }
+    &-desc{
+        font-family: "Merriweather";
+        font-style: italic;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 24px;
+        color: #CCD6DD;
+        width: 100%;
+        position: relative;
+        &::before{
+            content: "";
+            position: absolute;
+            width: 12px;
+            height: 1px;
+            background: #CCD6DD;
+            top: 50%;
+            left: 38%;
+            transform: translateY(-50%);
+        }
+    }
+}
+.lh-bottom{
+    max-width: 800px;
+    margin: 0 auto;
+}
+.lh-contents{
+    margin-bottom: 16px;
+    &-content_1{
+        max-width: 258px;
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #000000;
+        margin-bottom: 16px;
+    }
+    &-line_1{
+        width: 16px;
+        background: #FF523A;
+        margin: 0;
+        margin-bottom: 24px;
+    }
+    &-content_2{
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 24px;
+        color: #A8B0B6;
+        margin-right: 24px;
+    }
+    &-content_3{
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 24px;
+        color: #A8B0B6;
+    }
+}
+.lh-bottom-right{
+    & .lh-col-md-12{
+        padding-right: 0;
+        margin: 0;
+        padding-left: 0;
+    }
+}
+.lh-row-bottom-list{
+    &-text{
+        & a{
+            font-family: "Montserrat";
+            font-size: 12px;
+            line-height: 24px;
+            text-transform: uppercase;
+            color: #A8B0B6;
+            &:hover{
+                color: #000;
+                cursor: pointer;
+            }
+        }
+    }
+}
+.lh-bottom-left .lh-col-md-8{
+    gap: 6px 24px;
+}
+.lh-rows .lh-col-md-5{
+    padding-left: 0;
+    padding-right: 0;
+}
+.lh-saleoff{
+    &-contentt_1{
+        font-family: "Montserrat";
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 24px;
+        max-width: 231px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #000000;
+        margin-bottom: 16px;
+        & span{
+            color: #FF523A;
+        }
+    }
+}
+.lh-rowss__form{
+    border: 1px solid #EFEFEF;
+    padding: 16px 24px;
+    max-width: 400px;
+    width: 100%;
+    margin-bottom: 12px;
+    & .lh-input-visible{
+        display: flex;
+    }
+}
+.lh-form-control{
+    border: none;
+    outline: none;
+    max-width: 229px !important;
+    margin-right: 16px;
+    width: 100%;
+}
+.lh-input-group{
+    margin: 0;
+}
+.lh-input__line_1{
+    width: 8px;
+    background: #000;
+    margin: 0;
+    display: inline-block;
+}
+.lh-input__line_2{
+    width: 8px;
+    background: #000;
+    display: inline-block;
+    margin: 0;
+}
+.lh-input-group-append{
+    display: flex;
+    align-items: center;
+}
+.lh-btn-outline{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 12px;
+    line-height: 24px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000000;
+}
+.lh-rowss__question{
+    font-family: "Montserrat";
+    font-size: 14px;
+    line-height: 24px;
+    color: #CCD6DD;
 }
 
 </style>
