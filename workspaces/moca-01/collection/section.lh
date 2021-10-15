@@ -1,0 +1,97 @@
+@schema
+{
+    "name": "Collection",
+    "author": "LayoutHub Team",
+    "website": "https:\/\/www.LayoutHub.com",
+    "version": "1.0",
+    "category": "Testimonials",
+    "platform": "shopify",
+    "vendors": [
+        "css_line_icon",
+        "css_layouthub_base"
+    ],
+    "configs": {
+        "desktop": {
+            "background": {
+                "color": "#fff",
+                "image": "%URL%assets/bg_img.png",
+                "position": "center center",
+                "repeat": "no-repeat",
+                "size": "cover"
+            },
+            "section_box": {
+                "padding": {
+                    "top": "",
+                    "bottom": ""
+                }
+            }
+        },
+        "tablet": {
+            "section_box": {
+                "padding": {
+                    "top": "",
+                    "bottom": ""
+                }
+            }
+        },
+        "mobile": {
+            "section_box": {
+                "padding": {
+                    "top": "",
+                    "bottom": ""
+                }
+            }
+        }
+    }
+}
+ @endschema
+
+<template>
+	<div class="lh-wrapper wrapper">
+        <div class="lh-contain">
+            <h3 class="lh-contain-heading" v-html="lang(settings.heading)"></h3>
+            <p class="lh-contain-description" v-html="lang(settings.description)"></p>
+        </div>
+	</div>
+</template>
+<style lang="scss">
+.lh-wrapper{
+    padding-top: 370px;
+    padding-bottom: 370px;
+    margin-bottom: 12px;
+}
+.lh-contain{
+    max-width: 970px;
+    margin: 0 auto;
+    text-align: center;
+    &-heading{
+        font-family: "Montserrat";
+        font-weight: bold;
+        font-size: 80px;
+        line-height: 80px;
+        color: #000;
+        margin-bottom: 16px;
+    }
+    &-description{
+        font-family: "Montserrat";
+        font-size: 12px;
+        line-height: 24px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: #000;
+    }
+}
+@media screen and (max-width: 480px){
+    .lh-wrapper{
+        padding-top: 185px;
+        padding-bottom: 185px;
+    }
+    .lh-contain{
+        max-width: 295px;
+        &-heading{
+            font-size: 48px;
+            line-height: 48px;
+        }
+    }
+}
+</style>

@@ -54,7 +54,10 @@
 	<div class="lh-wrapper lh-wrap">
         <div class="lh-row-top">
             <h4 v-html="lang(settings.title)" class="lh-row-top-title"></h4>
-            <div v-html="lang(settings.desc)" class="lh-row-top-desc"></div>
+            <div class="lh-row-top-description">
+                <hr class="lh-row-top-description-hr">
+                <div v-html="lang(settings.desc)" class="lh-row-top-description-desc"></div>
+            </div>
         </div>
         <div class="lh-row lh-bottom">
             <div class="lh-bottom-left lh-col-md-6">
@@ -97,7 +100,7 @@
     margin: 0 auto;
     margin-bottom: 96px;
     &-title{
-        font-family: "Merriweather";
+        font-family: "Merriweather" !important;
         font-style: italic;
         font-weight: normal;
         font-size: 16px;
@@ -106,26 +109,25 @@
         color: #A8B0B6;
         margin-bottom: 16px;
     }
-    &-desc{
-        font-family: "Merriweather";
-        font-style: italic;
-        font-weight: normal;
-        font-size: 16px;
-        line-height: 24px;
-        color: #CCD6DD;
-        width: 100%;
-        position: relative;
-        &::before{
-            content: "";
-            position: absolute;
+    &-description{
+        display: inline-flex;
+        align-items: center;
+        gap: 0 12px;
+        &-hr{
             width: 12px;
-            height: 1px;
             background: #CCD6DD;
-            top: 50%;
-            left: 38%;
-            transform: translateY(-50%);
+            margin: 0;
         }
-    }
+        &-desc{
+            font-family: "Merriweather";
+            font-style: italic;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 24px;
+            color: #CCD6DD;
+            width: 100%;
+            }
+        }
 }
 .lh-bottom{
     max-width: 800px;
@@ -275,6 +277,7 @@
         &-title{
             font-size: 16px;
             line-height: 24px;
+            letter-spacing: -0.5;
             font-family: "Merriweather" !important;
         }
     }

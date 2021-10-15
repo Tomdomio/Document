@@ -1,0 +1,111 @@
+@schema
+{
+    "name": "Video Popup",
+    "author": "LayoutHub Team",
+    "website": "https:\/\/www.LayoutHub.com",
+    "version": "1.0",
+    "category": "Testimonials",
+    "platform": "shopify",
+    "vendors": [
+        "css_line_icon",
+        "css_layouthub_base",
+        "js_fancy_popup",
+        "css_fancy_popup"
+    ],
+    "configs": {
+        "desktop": {
+            "background": {
+                "color": "#fff",
+                "image": "%URL%assets/bgvideo.png",
+                "position": "center center",
+                "repeat": "no-repeat",
+                "size": "cover"
+            },
+            "section_box": {
+                "padding": {
+                    "top": "",
+                    "bottom": ""
+                }
+            }
+        },
+        "tablet": {
+            "section_box": {
+                "padding": {
+                    "top": "",
+                    "bottom": ""
+                }
+            }
+        },
+        "mobile": {
+            "section_box": {
+                "padding": {
+                    "top": "",
+                    "bottom": ""
+                }
+            }
+        }
+    }
+}
+ @endschema
+
+
+
+
+<template>
+	<div class="lh-wrapper wrapper">
+        <div class="lh-contain">
+            <h3 class="lh-contain-heading" v-html="lang(settings.heading)"></h3>
+            <p class="lh-contain-description" v-html="lang(settings.description)"></p>
+            <div class="lh-bg-video">
+                <a :href="settings.link" class="lh-btnn" data-fancybox>
+                    <span class="lh-icon-play"><i :class="settings.play"></i></span>
+                </a>
+            </div>
+        </div>
+	</div>
+</template>
+<style lang="scss">
+.lh-wrapper{
+    padding-top: 324px;
+    padding-bottom: 323px;
+}
+.lh-contain{
+    max-width: 970px;
+    margin: 0 auto;
+    text-align: center;
+    &-heading{
+        font-family: "Montserrat";
+        font-weight: bold;
+        font-size: 80px;
+        line-height: 80px;
+        color: #fff;
+        margin-bottom: 16px;
+    }
+    &-description{
+        font-family: "Montserrat";
+        font-size: 12px;
+        line-height: 24px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: #fff;
+        margin-bottom: 40px;
+    }
+}
+.lh-btnn .lh-icon-play {
+    font-size: 53px;
+    color: #fff;
+}
+@media screen and (max-width: 480px){
+    .lh-wrapper{
+        padding-top: 189px;
+        padding-bottom: 188px;
+    }
+    .lh-contain{
+        max-width: 295px;
+        &-heading{
+            font-size: 48px;
+            line-height: 48px;
+        }
+    }
+}
+</style>

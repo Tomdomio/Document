@@ -9,7 +9,7 @@
   "author": "LayoutHub Team",
   "website": "https://www.LayoutHub.com",
   "version": "1.0",
-  "sections": ["calltoaction", "newsletter"],
+  "sections": ["calltoaction", "newsletter", "videopopup", "collection"],
   "theme": {
     "font_family": "Merriweather",
     "title_font_family": "Montserrat",
