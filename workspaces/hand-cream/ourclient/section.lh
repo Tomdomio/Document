@@ -77,13 +77,14 @@
         min-width: 80px;
     }
 }
+.lh-gap .lh-row{
+    gap: 30px 0;
+    justify-content: center;
+}
 @media screen and (max-width: 991px){
     .lh-items-center .lh-col-md-4{
         flex: 0 0 50%;
         max-width: 50%;
-    }
-    .lh-gap .lh-row{
-        gap: 30px 0;
     }
 }
 @media screen and (max-width: 480px){
