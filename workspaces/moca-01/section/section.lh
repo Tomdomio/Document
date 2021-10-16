@@ -1,0 +1,127 @@
+@schema
+{
+    "name": "Section",
+    "author": "LayoutHub Team",
+    "website": "https:\/\/www.LayoutHub.com",
+    "version": "1.0",
+    "category": "Testimonials",
+    "platform": "shopify",
+    "vendors": [
+        "css_line_icon",
+        "css_layouthub_base"
+    ],
+    "configs": {
+        "desktop": {
+            "background": {
+                "color": "#fff",
+                "image": "",
+                "position": "center center",
+                "repeat": "no-repeat",
+                "size": "cover"
+            },
+            "section_box": {
+                "padding": {
+                    "top": "",
+                    "bottom": ""
+                }
+            }
+        },
+        "tablet": {
+            "section_box": {
+                "padding": {
+                    "top": "",
+                    "bottom": ""
+                }
+            }
+        },
+        "mobile": {
+            "section_box": {
+                "padding": {
+                    "top": "",
+                    "bottom": ""
+                }
+            }
+        }
+    }
+}
+ @endschema
+
+<template>
+	<div class="lh-wrapper">
+        <div class="lh-section1">
+            <div class="lh-section1-img" v-html="lang(settings.img)"></div>
+            <div class="lh-section1-text">
+                <h1 class="lh-section1-text--heading1" v-html="lang(settings.heading_1)"></h1>
+                <span class="lh-section1-text--desc1" v-html="lang(settings.description_1)"></span>
+            </div>
+        </div>
+        <div class="lh-section2">
+            <div class="lh-section2-imgg" v-html="lang(settings.imgg)"></div>
+            <div class="lh-section2-text">
+                <h1 class="lh-section2-text--heading2" v-html="lang(settings.heading_2)"></h1>
+                <span class="lh-section2-text--desc2" v-html="lang(settings.description_2)"></span>
+            </div>
+        </div>
+	</div>
+</template>
+
+<style lang="scss">
+    .lh-wrapper{
+        display: flex;
+        max-width: 1770px;
+        margin: 0 auto;
+        gap: 0 12px;
+    }
+    .lh-section1{
+        position: relative;
+        &-text{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 100%;
+            &--heading1{
+                font-family: "Montserrat";
+                font-weight: bold;
+                font-size: 60px;
+                line-height: 60px;
+                color: #FF523A;
+            }
+            &--desc1{
+                font-family: "Montserrat";
+                font-size: 12px;
+                line-height: 24px;
+                letter-spacing: 0.2em;
+                text-transform: uppercase;
+                color: #3F3F3F;
+            }
+        }
+    }
+    .lh-section2{
+        position: relative;
+        &-text{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 100%;
+            &--heading2{
+                font-family: "Montserrat";
+                font-weight: bold;
+                font-size: 60px;
+                line-height: 60px;
+                color: #000;
+            }
+            &--desc2{
+                font-family: "Montserrat";
+                font-size: 12px;
+                line-height: 24px;
+                letter-spacing: 0.2em;
+                text-transform: uppercase;
+                color: #3F3F3F;
+            }
+        }
+    }
+</style>
